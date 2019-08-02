@@ -1,0 +1,88 @@
+.gome-top {
+    position: relative;
+    border-bottom: 1px solid #f3f3f3;
+    background: #f8f8f8;
+    height: 30px;
+    color: #5e5e5e;
+    z-index: 999;
+}
+#gome-top-body {
+    position: relative;
+    background: #f8f8f8;
+    height: 30px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.wbox {
+    width: 1200px;
+    margin: 0 auto;
+}
+.gome-top {
+    position: relative;
+    border-bottom: 1px solid #f3f3f3;
+    background: #f8f8f8;
+    height: 30px;
+    color: #5e5e5e;
+    z-index: 999;
+}
+ #gome-entry-link {
+    display: none;
+}
+#gome-entry-link, #gome-plus-entry-link {
+    font-family: Arial,"Microsoft YaHei";
+    margin: 0 10px;
+    height: 30px;
+    overflow: hidden;
+}
+.gome-top li {
+    float: left;
+    position: relative;
+}
+#gome-entry-link i.icon-gome-logo {
+    background-position: -17px -1362px;
+    margin-top: -4px;
+}
+#gome-entry-link i, #gome-plus-entry-link i {
+    width: 13px;
+    height: 12px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.gome-top i, .gome-top em {
+    background: url(../img/ui.png);
+    display: inline-block;
+    vertical-align: middle;
+}
+#gome-entry-link a, #gome-plus-entry-link a {
+    color: #5e5e5e;
+    line-height: 32px;
+}
+.home .gome-top li.gome-spacer {
+    display: none;
+}
+.gome-top li.gome-spacer {
+    width: 1px;
+    height: 11px;
+    margin: 10px 0 0;
+    padding: 0;
+    background: #e6e6e6;
+    overflow: hidden;
+}
+#gome-user {
+    margin-right: 12px;
+}
+#gome-user b {
+    color: #5e5e5e;
+}
+.gome-top b {
+    float: left;
+    font-weight: 400;
+    display: block;
+    padding: 0 20px 0 10px;
+    border: 1px solid #f8f8f8;
+    border-bottom: 0;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    z-index: 9;
+    color: #888;
+}
