@@ -139,8 +139,42 @@ $(function(){
 		     	}
 		     	
 		     } 
-		       //轮播图实例化
+		     
+		      //小楼层轮播图
+		       class Minbanner{
+		       	  constructor(obj){
+		       	  	this.index = 0;	
+		       	  	this.minban = obj;
+		       	  }
+		       	  init(){
+		       	  	//this.auto();
+		     		this.mouevent();
+		       	  }
+		       	  getEle(){
+		       	  
+		       	  }
+		       	  auto(){
+		       	  	this.timer = setInterval(()=>{
+                       this.next();
+		     		
+                     },2000)
+		       	  }
+		       	  next(){
+		       	  	
+		       	  }
+		       	  mouevent(){
+		       	  	 
+		       	  }
+		       }
+		       
+		       //大轮播图实例化
 		       let banner = new Banner();  
 		         banner.init();
+		       //楼层轮播图循环实例化
 		       
+		       
+		       let minbanner = new Minbanner();
+		           minbanner.init();
+		           
+		        
 			});
