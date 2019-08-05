@@ -1,0 +1,340 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+ul li{
+	list-style:none;
+}
+a{text-decoration:none;}
+.datahot{
+	width: 1200px;
+	height: 140px;
+	margin:20px auto;
+	background: #f8f8f8 none repeat scroll 0 0;
+    position: relative;
+    padding: 0 0 0 58px;
+    overflow: hidden;   
+}
+.datahot .icon_tj{
+	color: #fff;
+    float: left;
+    width: 48px;
+    height: 40px;
+    padding-top: 4px;
+    font-size:10px;
+    background: #ff5757;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0 -5px 0 -43px;
+}
+.datahot .icon_tj:after {
+    content: " ";
+    float: left;
+    display: block;
+    font-size: 0;
+    border-left: 24px solid #f8f8f8;
+    border-right: 24px solid #f8f8f8;
+    border-top: 16px solid #ff5757;
+}
+.datahot ul{
+	margin-top: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+.datahot ul li{
+	float: left;
+    width: 252px;
+    height: 100px;
+    display: inline;
+    margin-left: 25px;
+}
+.datahot ul li>a{
+	display:inline-block;
+	border: 1px solid #ececec;
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+}
+.datahot ul li a img{
+	width: 98px;
+	height: 98px;
+}
+.datahot li .name{
+	height: 48px;
+	width: 142px;
+    line-height: 16px;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word
+}
+.datahot .name a{
+	color:#666;
+	font-size:10px;
+}
+.datahot .price{
+	color: #e3101e;
+    font: 700 12px/18px Arial;
+    padding: 6px 0;
+}
+.datahot li>span a{
+	display:block;
+	width: 60px;
+	height: 22px;
+	font-size:12px;
+	color:#666;
+	border:1px solid #666;
+	line-height:22px;
+	text-align:center;
+	float:left;
+}
+.datahot li a:hover{
+	color:red;
+}
+.datatex{
+	width: 1200px;
+	height: 34px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #f1f1f1;
+    line-height: 34px;
+    margin:0 auto;
+    font-size:16px;
+    line-height:34px;
+    padding-left:15px;
+}
+.tag{
+	width: 1200px;
+	height: 210px;
+	margin:0 auto;
+}
+.tag h3{
+	color:#666;
+	font-weight:400;
+	font-size:12px;
+	height: 35px;
+	line-height:35px;
+    border-bottom:1px solid #ccc;
+}
+.tag h3 span{
+	float:left;
+	display:block;
+	line-height:34px;
+	width: 110px;
+	height: 34px;
+	padding-left:15px;
+}
+.tag ul{
+	width: 970px;
+	height: 34px;
+	float:left;
+}
+.tag ul a{
+	display:inline-block;
+	margin-right:40px;
+	color: #069
+	height: 34px;
+	line-height:34px;	
+}
+.tag h3>p{
+	margin-top:8px;
+	margin-right:5px;
+	display:inline-block;
+	float:right;
+	border:1px solid #ccc;
+	width: 42px;
+	height: 20px;
+	text-align:center;
+	line-height:20px;
+}
+.datamain{
+	width: 1200px;
+	margin:0 auto;
+}
+.datamain .mainleft{
+	float: left;
+    margin-left: -208px;
+    width: 198px;
+    overflow: hidden;	
+}
+.datamain .mainright{
+	float:right;
+	width: 992px;
+}
+.filter{
+	padding: 6px 10px;
+    line-height: 24px;
+	width: 992px;
+	height: 38px;
+	position:relative;
+	color:#888;
+}
+ .mainright .filter span{
+	text-align:center;
+	line-height:29px;
+	display:inline-block;
+	 padding:0 10px;
+	height: 29px;
+	border:1px solid white;
+}
+.filter input{
+	width: 50px;
+	height: 26px;
+	padding-left:5px;
+	line-height:26px;
+	color:#888;
+	border:1px solid #ccc;
+}
+
+.filter span:hover{
+	border:1px solid red;
+	color:red;
+}
+/*span点击时的样式*/
+.mainright .filter .spclick{
+	background:red;
+	color:white;
+}
+.goodlitems{
+	width: 100%;
+	margin-top:10px;
+	position:relative;
+}
+.gooditems .item{
+	float:left;
+	margin-top:10px;
+	list-style:none;
+	color:#888;
+	width: 248px;
+	height: 491px;
+	padding: 35px 14px 10px;
+    border: 1px solid #fff;
+    transition: border .1s ease 0s;
+}
+.gooditems .item>a{
+	display:block;
+}
+.gooditems>a img{
+	width: 210px;
+	height: 190px;
+}
+.gooditems .item .imgbox{
+	width: 220px;
+	height: 45px;
+	padding: 5px 15px 8px;
+    overflow: hidden;
+}
+.gooditems .item .imgbox img{
+	float: left;
+    width: 32px;
+    height: 32px;
+    overflow:hidden;
+    border: 1px solid #e6e6e6;
+    margin: 0 3px 0 2px;
+}
+.gooditems .item .imgbox img:hover{
+	border:1px solid red;
+}
+.gooditems .item h3{
+	height: 20px;
+	font-size:16px;
+	color:red;
+    line-height: 20px;
+    margin: 13px 5px 5px;
+    overflow: hidden;
+}
+.gooditems .item h4{
+	width: 220px;
+	height: 40px;
+	line-height: 20px;
+    padding: 0 5px;
+    overflow: hidden;
+    font-weight:500;
+    font-size:12px;
+    color:#888;
+}
+.gooditems .item h4 a{
+	color:#888;
+}
+.gooditems .item h4:hover a{
+	color:red;
+}
+.gooditems .item>span{
+	font-size:10px;
+	color:#666;
+}.gooditems .item .sp1{
+	padding-left:5px;
+}
+.gooditems .item>i{		
+	line-height:20px;
+	font-size:10px;;
+	font-style:normal;
+	color:cornflowerblue;
+}
+.gooditems .item:hover{	
+    border-color: #e6e6e6;
+    box-shadow: 0 0 1px #e6e6e6;
+    position: relative;
+    z-index: 2;
+}
+.gooditems .item .stop{
+	height: 25px;
+	padding: 0 5px;
+    line-height: 25px;
+}
+.gooditems .item .stop span{
+	display:inline-block;
+	width: 28px;
+	font-size:10px;
+	height: 20px;
+	line-height:20px;
+    color: #fff;
+    float:left;
+    background: #e3101e;
+    text-align: center;
+    margin-right: 5px;
+}
+.gooditems .item .stop i{
+	font-style:normal;
+	font-size:10px;
+}
+.gooditems .item .juan{
+	width: 80px;
+	height: 20px;
+	font-size:10px;
+    border: 1px solid #e1301e;
+    color: #e1301e;
+    line-height: 20px;
+    padding: 0 2px;
+    font-weight:400;
+}
+.pagebox{
+	height: 60px;
+	width: 992px;
+	
+}
+.page{
+	margin:20px 0;
+	float:right;
+
+}
+.page input{
+	float:left;
+	width:60px;
+	height: 25px;
+	line-height:25px;
+	text-align:center;
+}
+.page span{
+	float:left;
+	display:inline-block;
+	text-align:center;
+	width: 30px;
+	border:1px solid #ccc;
+	border-right:none;
+	height: 25px;
+}
+#page span:hover{
+	 color:red;
+	 border:1px solid #red;
+}
+#page .spanact{
+	  background:#555;
+}

@@ -139,42 +139,161 @@ $(function(){
 		     	}
 		     	
 		     } 
+		    
 		     
-		      //小楼层轮播图
-		       class Minbanner{
-		       	  constructor(obj){
-		       	  	this.index = 0;	
-		       	  	this.minban = obj;
-		       	  }
-		       	  init(){
-		       	  	//this.auto();
-		     		this.mouevent();
-		       	  }
-		       	  getEle(){
-		       	  
-		       	  }
-		       	  auto(){
-		       	  	this.timer = setInterval(()=>{
-                       this.next();
-		     		
-                     },2000)
-		       	  }
-		       	  next(){
-		       	  	
-		       	  }
-		       	  mouevent(){
-		       	  	 
-		       	  }
-		       }
+		    
 		       
 		       //大轮播图实例化
 		       let banner = new Banner();  
 		         banner.init();
-		       //楼层轮播图循环实例化
 		       
-		       
-		       let minbanner = new Minbanner();
-		           minbanner.init();
-		           
+               
+		      
+		        //小轮播图
+		      //循环绑定轮播
+		       let minban = $(".minbanner");
+		        minban.each(function(){
+		        	var lis = $(this).children("ul").children("li");
+		        	var length = lis.length; 
+		        	var is = $(this).children("p").children("i");
+		        	var nextli = $(this).children(".btnnext");
+		        	var prevli = $(this).children('.btnprev');
+		        	var timer;
+		        	index = 0;
+		        	//自动轮播
+		            //全局
+		            
+		        	function auto(index){
+		        		
+		        	  timer = setInterval(()=>{
+                          index = next(index); 		
+                     },2000);
+		        	}		        	
+		        	function next(index){
+		        		index ++;
+		        		if(index >= length){
+		        			index = 0;
+		        		}
+		        		//console.log(length);
+		        		//console.log(index);
+		        	    lis.eq(index).fadeIn().siblings().fadeOut();
+		        	    is.eq(index).addClass("acti").siblings().removeClass("acti");
+		        	      return index;
+		        	}
+		        	function prev(index){
+		        		index--;
+		        		if(index < 0){
+		        			index = index = length;
+		        		}
+		        		lis.eq(index).fadeIn().siblings().fadeOut();
+		        		is.eq(index).addClass("acti").siblings().removeClass("acti");
+		        	     return index;
+		        	}
+		        	
+		        	//鼠标移入
+		        	$(this).hover(()=>{
+		        		clearInterval(timer);	
+		        		nextli.addClass("actspan");
+		        		prevli.addClass("actspan");
+		        	},()=>{
+		        		auto(index);
+		        		nextli.removeClass("actspan");
+		        		prevli.removeClass("actspan");
+		        	})
+		        	
+		        	is.mouseenter(function(){      		
+		        		index = $(this).index(); 
+		        	  $(this).addClass("acti").siblings().removeClass("acti");	
+		        	  lis.eq(index).fadeIn().siblings().fadeOut();
+		        	})
+		        	prevli.click(function(){
+		        		index = prev(index);		        		
+		        	})
+		        	nextli.click(function(){
+		        		 index = next(index);		       
+		        	})
+		        	//调用函数
+		        	 auto(index);
+		        })
+		        //楼层选项卡		       
+		        $(".lou .tag").on("mouseenter","li",function(){
+		        	      var index = $(this).index();		
+		        	      var subright = $(this).parents(".lou").children().children(".subright");
+		        	      subright.eq(index).addClass("subshow").siblings().removeClass("subshow");		        	     
+		        })
+		        
+		        
+		       // 楼层跳跃
+		     function addClass(eles, index, lastClass, curClass) {
+                    Array.from(eles).forEach((item) => {
+                        item.className = lastClass;
+                    })
+                    eles[index].className = curClass;
+                }
+		    
+		     function louEvent(){
+		      var lous = document.getElementsByClassName('lou');		      
+			  var fnav = document.getElementsByClassName('elevator')[0];
+			  var  tag = fnav.getElementsByTagName('li');
+			  var bottom =  document.getElementsByClassName("bottomnav")[0]; 		
+			   Array.from(tag).forEach((item,index)=>{
+			   	  //鼠标点击事件  点击跳到相应楼层
+			        	 item.onclick = () =>{
+			        	  //获取相应楼层距离屏幕的高度
+			        	  var h = 0;
+			        	  h = lous[index].offsetTop;
+			        	  // 跳转
+			        	  window.scrollTo(0,h);
+			        	  }
+			   	        // 移入高亮
+			   	       $(item).hover(()=>{
+			   	       	  $(item).toggleClass("eleli1");
+			   	       })
+			   	       		   	      
+			   	       //屏幕滚动时浮动框跟随楼层高亮
+			        	  //获取一层自身高度
+			        	   var self = this;
+			   	      var lou1 = lous[0].offsetTop - 800;				   	     			   	      
+			   	      var loubt = bottom.offsetTop ;
+			   	  
+			   	       window.onscroll = function(ev){
+			        	 var t = window.scrollY ;		        		 	
+			       //屏幕距离小于一楼的距离时隐藏  超过第一层浮动导航显示 到达底部隐藏
+		   	   	     	 if(t < lou1 || t > loubt - 200){	
+		   	   	     	 	console.log("111");  	     	 	
+		   	   	     		fnav.style.display = 'none';
+		   	   	     	 }
+		   	   	     	else{
+		   	   	     		fnav.style.display = 'block';
+		   	   	     	  }
+	   	   	     	    //屏幕滚动到相应楼层对应浮动导航高亮
+		   	   	     	Array.from(lous).forEach((item,index)=>{
+		   	   	     		//存在 小误差值
+		   	   	     		var tmax = lous[index].offsetHeight + lous[index].offsetTop - 180;
+		   	   	     		var tmin = lous[index].offsetTop - 180;
+			        	    if( t >= tmin && t < tmax){
+			        	    	addClass(tag,index,'','eleli2');	
+			        	    	$(tag).eq(index).addClass("elel2").siblings().removeClass("elel2");
+			        	    }
+			        	    
+			              })
+                       }			   	    	      
+			       })
+		        }
+		         //调用
+		            louEvent();
+		          
+		      //$(".elevator").css("display","block");
+		      
+		      //侧边广告
+		      $(".asidead ul li").mouseenter(function(){
+		      	  $(this).toggleClass("asideli");	
+		      	  $(this).find(".asideshow").css("display","block");	      	  
+		      })
+		      
+		     $(".asidead ul li").mouseleave(function(){
+		        $(this).find(".asideshow").css("display","none");
+		        });
+		      $(".adshow").show(2000);
 		        
 			});

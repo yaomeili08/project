@@ -1327,6 +1327,7 @@ font-size:20px;
 .subtemp{
 	width: 1220px;
 	height: 470px;
+	position:relative;
 }
 
 .temp .subtemp .subleft{
@@ -1346,6 +1347,7 @@ font-size:20px;
     display: block;
     width: 220px;
     height: 278px;
+    margin-left:-10px;
 }
 .temp4 .subtemp .subleft>a img{
 	margin-left:-10px;
@@ -1419,19 +1421,27 @@ font-size:20px;
 	text-decoration: underline;
 	
 }
+.subright{
+	display:none;
+}
+.subtemp .subshow{
+	display:block;
+}
 .subtemp .subright .tempad{
 	height: 470px;
     border-left: 1px solid #eee;
 }
 .subtemp .subright .tempad li{
-	width: 200px;
+	width: 196px;
     height: 235px;
     float: left;
+    overflow:hidden;
 }
 .subtemp .subright .tempad li a{
 	display: block;
-    width: 200px;
+    width: 196px;
     height: 235px;
+    overflow:hidden;
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
@@ -1468,8 +1478,9 @@ font-size:20px;
 	height: 50px;
 	text-align:center;
 	line-height:40px;
-	background:#bbb;
+	background:#aaa;
 	color:white;
+	display:none;
 	font-size:30px;
 	z-index: 3;
 }
@@ -1495,6 +1506,19 @@ font-size:20px;
 	background:#888;
 	opacity: 0.8;
 	z-index:3;
+}
+/*i移入事件*/
+.subright .minbanner p i:hover{
+	background:orange;
+}
+.subright .minbanner p .acti{
+	background:orange;
+}
+ .subright .minbanner .actspan{
+	display:block;
+}
+.subright .minbanner span:hover{
+	background:#333;
 }
 /*品质生活*/
 .querylive{
@@ -1913,4 +1937,230 @@ font-size:20px;
 }
 .foot-ui b:nth-child(6){
 	
+}
+/*楼层跳跃*/
+.elevator{
+	width: 66px;
+	background:#fff;
+	z-index: 20;
+    position: fixed;
+    left: 73.4445px;
+    top: 154px;  
+    list-style:none; 
+    /*display:none;*/
+}
+
+.elevator p{
+	background: #f6f6f6;
+    color: #5e5e5e;
+    font-size: 13px;
+    font-weight: 700;
+    height: 30px;
+    text-align:center;
+    line-height: 31px
+}
+.elevator li{
+	position:relative;
+	width: 66px;
+	height: 44px;
+	font-size:12px;
+	color:#888;
+	text-align:center;
+    border-top: none;
+    cursor: pointer;
+    border:1px solid #efefef;
+    border-top:none;
+    overflow:hidden;  
+}
+.elevator li:hover {
+	color:red;
+}
+.elevator .eleli1 , .elevator .eleli2{
+	color:red;
+}
+.elevator li b{
+	float: left;
+    overflow: hidden;
+    margin-left: -1px;
+    margin-top: -1px;
+    width: 10px;
+    height: 10px;
+    background: url("") -152px 0 no-repeat;
+    z-index: 2;
+}
+.elevator span{
+	display:block;
+	width: 66px;
+	overflow:hidden;
+	height: 29px;
+    text-align: center;
+}
+.elevator span a{
+	display: inline-block;
+    width: 17px;
+    height: 9px;
+    background: url("https://app.gomein.net.cn/gmpro/2.0.0/channel/newindex/8.5.3/css/i/ui.png") -216px -52px no-repeat;
+    margin-top: 10px;
+}
+.elevator  .down a{
+	background-position:-216px 0;
+}
+/*侧栏广告*/
+.asidead{
+	position:fixed;
+    width: 35px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #5c5c5c;
+}
+.asidead .ul1{
+	position:absolute;
+	width: 35px;
+	height: 198px;
+	top:163px;
+	left:0;
+}
+.asidead .ul1 li{
+	border-bottom:1px solid #999;
+}
+.asidead .vip{
+	position:relative;	
+	width:35px;
+	height: 39px;
+}
+.asidead .vip i{
+	background: url("https://css.gomein.net.cn/gmpro/1.0.0/public/1.0.0/css/i/ui.png") no-repeat -18px -1025px;
+    display: inline-block;
+    width: 28px;
+    height: 18px;
+    margin-top: 9px;
+    position:absolute;
+    right:0;
+    top:0;
+}
+.asidead .vip b{
+	background: url('https://css.gomein.net.cn/gmpro/1.0.0/public/1.0.0/css/i/ui.png') -47px -464px;
+    display: inline-block;
+    width: 7px;
+    height: 11px;
+    z-index:10;
+}
+ .vip>a , .collect>a{
+ 	display:inline-block;
+	position:absolute;
+	right:35px;	
+    top: 5px;
+    width:75px;
+    border: 1px solid #e6e6e6;
+    color: #999;
+    cursor: pointer;
+    background: #fff;
+    overflow: hidden;
+    z-index:-1;
+    height: 28px;
+    line-height: 28px;
+    text-decoration: none;
+    text-align:center;
+}
+.asidead .car{
+	padding:0 2px;
+	width: 35px;
+	height:120px;
+	font-size: 12px;
+    color: #fff;
+    text-align:center;
+    position:relative;
+}
+.asidead .car b{
+	display:inline-block;
+	margin-right:3px;
+	margin-top:20px;
+    width: 30px;
+    height: 25px;  
+    background:url("https://css.gomein.net.cn/gmpro/1.0.0/public/1.0.0/css/i/ui.png")  -24px -1046px !important ;
+}
+.asidead .car b span{
+	position:absolute;
+	top:8px;
+	right:3px;
+	display:block;
+	width: 14px;
+	height: 14px;
+	background:#aaa;
+	color:#FFFFFF;
+	text-align:center;
+	font-size:10px;
+	line-height:12px;
+}
+.asidead .car>a>span{
+	display:block;
+	padding:0 12px;
+	font-size:12px;
+	color:white; 
+	line-height:20px;
+}
+.asidead .collect{
+	width: 35px;
+	height:35px;
+	text-align:center;
+	line-height:35px;
+	position:relative;
+}
+.asidead .collect i{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('https://css.gomein.net.cn/gmpro/1.0.0/public/1.0.0/css/i/ui.png') no-repeat -71px -1023px;
+}
+.asidead .ul2{
+	position: absolute;
+    bottom: 35px;
+    right: 0;
+    width: 35px;
+    height: 157px;
+    color: #999;
+    font-size: 12px;
+}
+.asidead .ul2 li{
+	width: 35px;
+	height: 38px;
+	text-align:center;
+	line-height:38px;
+	position:relative;
+}
+.asidead .ul2 li:nth-child(1) img{
+	width: 140px;
+	height: 180px;
+	position:absolute;
+	top:-50px;
+	left:-140px;
+}
+.asidead .ul2 li i{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	background: url("https://css.gomein.net.cn/gmpro/1.0.0/public/1.0.0/css/i/ui.png") ;
+}
+.asidead .ul2 li:nth-child(1) i{
+	background-position: -212px -473px;
+}
+.asidead .ul2 li:nth-child(2) i{
+	background-position: -212px -493px;
+}
+.asidead .ul2 li:nth-child(3) i{
+	background-position: -212px -513px;
+}
+.asidead .ul2 li:nth-child(4) i{
+	display: inline-block;
+    width: 17px;
+    height: 9px;
+    background: url("https://app.gomein.net.cn/gmpro/2.0.0/channel/newindex/8.5.3/css/i/ui.png") -216px -52px no-repeat;
+    margin-top: 10px;
+}
+.asidead ul .asideli{
+	background:#333;
+}
+.asidead .asideshow{
+	display:none;	
 }
