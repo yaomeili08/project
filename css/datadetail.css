@@ -59,21 +59,27 @@ a{text-decoration:none;}
 	height: 595px;
 	position:relative;
 }
-.detail .left .showimg>img{
+
+.detail .left .smail{
+	width: 452px;
+	z-index:200;
+	/*height: 566px;*/
+}
+.detail .left .smail_box>img{
 	width: 448px;
 	height: 448px;
 	overflow:hidden;
 }
-.detail .left .showimg{
+.detail .left .smail_box{
 	padding:2px 0  0 2px;
-	width: 452px;
-	height: 460px;
+	width: 450px;
+	height: 450px;
     position:relative;
     overflow:hidden;
     border:1px solid #d9d9d9;
     margin-bottom:10px;
 }
-.detail .left .showimg>i{
+.detail .left .smail_box>i{
 	display:block;
 	position:absolute;
 	width: 20px;
@@ -82,13 +88,25 @@ a{text-decoration:none;}
     bottom:0;
     z-index:3;
 }
+.detail .left .big{
+	width: 448px;
+	height: 448px;
+	z-index:300;
+}
+.detail .left .big>img{
+	display:block;
+	width: 1350px;
+	height: 1350px;
+	z-index:10;
+}
 .detail .imgtag{
 	width: 450px;
 	height: 70px;
 	overflow:hidden;
 }
-.detail .imgtag img{
+.detail .list img{
 	width: 68px;
+	float:left;
 	height: 68px;
 	margin-right:7px;
 	cursor:pointer;
@@ -96,7 +114,7 @@ a{text-decoration:none;}
 	border: 1px solid #f2f2f2;
     background-color: #f7f7f7;
 }
-.detail .imgtag .actimg{
+.detail .list .actimg{
 	border:1px solid orange;
 }
 .detail .productTex{

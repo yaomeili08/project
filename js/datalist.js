@@ -127,12 +127,18 @@
 			              var o ={};			 			 
 			 			 o.bigimg = $(this).find('.bigimg img')[0].src;
 			 			 o.price = $(this).find(".price").html();
-			 			 o.title = $(this).find("h4 a").html();
-			 			 o.img1 = $(this).find(".imglist img")[0].src;
-			 			 o.img2 = $(this).find(".imglist img")[1].src;
-			 			 //console.log(o);
+			 			 o.title = $(this).find("h4 a").html();			 	
+			 			 var  arr = $(this).find(".imgbox img");
+			 			 var strimg = "";
+			 		        arr.each((index,ele)=>{
+			 		      	    strimg += (ele.src + "$$$$");
+			 		      });
+			 		    o.imglist =  (strimg).substring(0,strimg.length-4);
+			 		    //console.log(o.imglist);
 			 			let str = self.objToStr(o);	
-			 			console.log(str);
+			 			console.log(o,str);
+			 						 			
+			 			//console.log(str);
 			 			location.href = '../html/商品详情页.html?' + str;
 			 		})
 			

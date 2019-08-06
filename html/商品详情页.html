@@ -2,8 +2,196 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>商品详情页</title>
+		<link rel="stylesheet" href="../css/mimor.css" />
+		<link rel="stylesheet" href="../css/datadetail.css" />
+		<script src="../js/jquery-3.4.1.js"></script>
+		
 	</head>
 	<body>
+		
+		  <div class="phonenav">
+		  	<div class="phnav">
+		  		<span><a href="#">首页</a></span>
+		  		<span><a href="#">全部商品</a></span>
+		  		<span><a href="#">小米手机</a></span>
+		  		<span><a href="#">红米手机</a></span>
+		  		<span><a href="#">智能家居</a></span>
+		  		<span><a href="#">小米彩电</a></span>
+		  	</div>
+		  </div>
+		  <div class="navpath">
+		  	<div class="pathtex">
+		  		<span><a href="#">首页</a></span>&gt;
+		  		<span><a href="#">商品列表</a></span>&gt;
+		  		<span><a href="#">商品详情页</a></span>		  		
+		  	</div>
+		  </div>
+		  <div class="detail">
+			<!--<div class="left">
+				<div class="showimg">
+					<img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_450.jpg"  />
+					<i><img src="../img/mimor.PNG"/></i>
+				</div>
+				<ul class='imgtag'>
+					<img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" />
+					<img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" />
+					<img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" />
+				</ul>
+				<div class='productTex'>
+					<p>商品编号：1710343037</p>		
+				</div>
+			</div>
+			<div class="right">
+				<div class='product'>
+					<div class='title'>
+					    <p><span class='time'></span></p>
+						<h3>简约优雅网纱透视刺绣无袖中长款圆领气质雪纺连衣裙</h3>
+						<p>小米MI 小米9 超广角微距三摄 8GB+128GB 深空灰 全网通 双卡双待</p>					
+					</div>
+					<img src="../img/datadetail.jpg" alt="" />
+					<h4> 
+						<p><label>国美价</label>&yen3299.00</p><br>
+						<p><label>领劵</label><i>满500-100</i><i>满2999-300</i></p> 
+					</h4>
+					<h5><span>配送至</span><p>广东省广州市<i>></i></p></h5>
+					<h5><span>服务</span><p>由国美提供并提供保障监管。</p></h5>
+					<h5 class="size  color"><span>颜色</span><p>幻彩紫</p><p>梦幻蓝</p><p>深空灰</p></h5>
+					<h5  class='size  vis'><span>版本</span><p>6GB+12GB</p><p>8GB+128GB</p><p>8GB+256GB</p></h5>
+					<h5  class='size type'><span>网络制式</span><p>6GB+12GB</p><p>8GB+128GB</p></h5>
+					<h5 class='count'><span>数量</span>
+						<p><em class="add">+</em><span>1</span><em class="sub">-</em></p>
+					</h5>
+					<button class='submit'><i></i>加入购物袋</button>
+				</div>
+			</div>-->
+		</div>
+		<script type="text/javascript">
+			//获取跳转后传送的信息
+			var inf = decodeURI(location.search); 
+		 	inf = inf.slice(1);
+		 	 // 字符串转对象函数
+			 function strToObj(str){
+			 	var arr = str.split('&');
+			 	var obj = {};
+			 	arr.forEach(function(item){
+			 		var html = item.split('=');
+			 		obj[html[0]] = html[1];
+			 	});
+			 	return obj;
+			 }
+			var data = strToObj(inf);			
+			
+			//小图列表
+			
+			var imglist = (data.imglist).slice('$$$$');
+		   // console.log(imglist);
+			 //数据渲染
+			 var html = `
+			<div class="left">
+            <article class="wrapper">
+            <div class="smail">
+            <div class="smail_box">
+              <img src="${data.bigimg}">
+               <i class="icon"><img src="../img/mimor.PNG"/></i>
+               <div class="make">              	
+                </div>
+               </div>
+            <p class="leftimg"><</p>
+            <div class="list">
+                   <ul>
+                    <img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" alt="">
+                    <img src="https://gfs11.gomein.net.cn/T1WfxQB_Lv1RCvBVdK_60.jpg" alt="">
+                    <img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" alt="">
+                    <img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" alt="">
+             
+                  </ul>
+            </div>
+            <p class="rightimg">></p>
+           </div>        
+            <div class="big">
+            <img src="${data.bigimg}" alt="">
+           </div>
+           </article>
+
+			<div class='productTex'>
+					<p>商品编号：1710343037</p>		
+			</div>
+			</div>
+			<div class="right">
+				<div class='product'>
+					<div class='title'>
+					    <p><span class='time'></span></p>
+						<h3>${data.title}</h3>
+						<p>${data.title}</p>					
+					</div>
+					<img src="../img/datadetail.jpg" alt="" />
+					<h4> 
+						<p class="price"><label>国美价</label>&yen<span>${(data.price).substring(1,)}</span></p><br>
+						<p><label>领劵</label><i>满500-100</i><i>满2999-300</i></p> 
+					</h4>
+					<h5><span>配送至</span><p>广东省广州市<i>></i></p></h5>
+					<h5><span>服务</span><p>由国美提供并提供保障监管。</p></h5>
+					<h5 class="size  color"><span>颜色</span><p>幻彩紫</p><p>梦幻蓝</p><p>深空灰</p></h5>
+					<h5  class='size  vis'><span>版本</span><p>6GB+12GB</p><p>8GB+128GB</p><p>8GB+256GB</p></h5>
+					<h5  class='size types'><span>网络制式</span><p>全网通</p><p>4G版</p></h5>
+					<h5 class='count'><span>数量</span>
+						<li><em class="add">+</em><span>1</span><em class="sub">-</em></li>
+					</h5>
+				
+					<button class='submit'><i></i>加入购物车</button>
+				</div>
+			</div>		
+			`;
+			
+			//小图片选项卡
+			$(".detail").append(html);
+			$(".list").on('mouseenter',"img",function(){
+				let index = $(this.index);
+				$(".smail_box ").children("img").attr("src", this.src);
+				$(this).addClass("actimg").siblings().removeClass("actimg");		  
+			})
+			// 商品详情选项
+			$(".right h5").on("click",'p',function(){
+				   //console.log(this);
+				  $(this).addClass("pactive").siblings().removeClass("pactive");
+			})
+			
+			//点击数量增减
+			$(".count .add").click(function(){
+				var num =  $(this).next().html();
+				  num ++;
+				 $(this).next().html(num);
+				 console.log($(this).next().html());
+			})
+			
+			$(".count .sub").click(function(){
+				var num =  $(this).prev().html();
+				  num --;
+				  if(num <= 1){
+				  	num = "1";
+				  }
+				 $(this).prev().html(num);
+				 console.log($(this).prev().html());
+			})
+			
+			//点击加入购物车存入cookie数据库
+			$(".detail").on("click" ,".submit",function(){
+				//需要存入购物车数据
+				 var o ={};
+				 var detail = $(this).parents(".detail");
+				  o.img = detail.find(".smail_box img").attr("src");
+				  o.price = detail.find(".price span").text();
+				  o.title = detail.find(".title h3").text();
+				  o.color = detail.find(".color .pactive").text();
+				  o.vis = detail.find(".vis .pactive").text();
+				  o.types = detail.find(".types .pactive").text();
+				  o.count = detail.find(".count li span").text();
+				  
+				 // console.log(o.price,o.color,o.vis,o.type,o.count);
+				  console.log(o);
+			})
+		</script>
+		<script src="../js/mimor.js"></script>
 	</body>
 </html>
