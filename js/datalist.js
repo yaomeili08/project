@@ -19,16 +19,9 @@
      //调用tag渲染
     tagHtml(datatag);
     
-    //小图标选项卡
-    //console.log($(".item .imgbox img"))
-    $(".item .imgbox img").mouseenter(function(){
-    	   var curimg = this.src;
-    	   var bigimg = $(this).parents(".item").find(".bigimg img");
-    	  // bigimg[0].style.src = curimg;
-    	    bigimg.css("src",curimg);
-    	   //console.log( bigimg[0].style.src,this.src);
-    	 
-    },)
+  
+      
+
     
     //数据请求
      /* 请求页码生成页码标签 */
@@ -75,7 +68,7 @@
                     return `
                      <li class="item" data-git = ${ele.git}>
 	    				<a class="bigimg" href="#"><img src="${ele.bigimg}"/></a>
-	    				<p class="imglist" > ${strimg}</p>
+	    				<p class="imgbox" > ${strimg}</p>
 	    				<h3 class="price">&yen${ele.price}</h3>
 	    				<h4><a href="#">${ele.title}</a></h4>
 	    				<span class="sp1">已有</span><i class="count">13666</i><span >人评价</span><br>
@@ -83,7 +76,7 @@
 	    				 <span>自营</span>
 	    				 <i>${ele.shop}</i>
 	    				</p>
-	    			<h5 class="juan">${ele.juan}</h5> 				
+	    			<h5 class="juan">${ele.juan ? ele.juan :""}</h5> 				
 	    			</li>
                     `;
                 }).join("");
@@ -108,29 +101,39 @@
     })
    
    
-   //点击商品列表跳转到详情页
-   function objToStr(obj){
+   
+		//小图标选项卡
+       
+    $(".gooditems ").on("mouseenter",".imgbox img ",function(){
+    	   var curimg = this.src;
+    	   var bigimg = $(this).parents(".item").find(".bigimg img");
+    	    bigimg.attr("src",curimg);
+    	 
+    	 
+       })	 		
+   
+          //点击商品列表跳转到详情页
+         function objToStr(obj){
                 	var str = '';
                 	for(var key in  obj){
                 		str += key + '=' + obj[key] + '&';
                 	}
                 	return str.slice(0,-1);
                }
-     
-			 		  
+       
 			 		$(".gooditems ").on("click",".item",function(){
 			 			console.log(this);
 			 			 event.preventDefault();
-			              var o ={};
-			 			 
+			              var o ={};			 			 
 			 			 o.bigimg = $(this).find('.bigimg img')[0].src;
-			 			 o.price = $(this).find("price").html();
+			 			 o.price = $(this).find(".price").html();
 			 			 o.title = $(this).find("h4 a").html();
 			 			 o.img1 = $(this).find(".imglist img")[0].src;
 			 			 o.img2 = $(this).find(".imglist img")[1].src;
-			 			 console.log(o);
-			 			let str = self.objToStr();
-			 			//location.href = '5蘑菇街闲情页.html?' + str;
+			 			 //console.log(o);
+			 			let str = self.objToStr(o);	
+			 			console.log(str);
+			 			location.href = '../html/商品详情页.html?' + str;
 			 		})
 			
 			

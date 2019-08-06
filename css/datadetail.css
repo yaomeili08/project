@@ -1,0 +1,343 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+ul li{ list-style:none;}
+a{text-decoration:none;}
+.phonenav{
+	width: 100%;
+	height: 40px;
+	background:#333333;
+}
+.phnav{
+	width: 1200px;
+	height: 100%;
+	margin:0 auto;
+}
+.phnav span{
+	display:inline-block;
+	height:100%;
+    padding:10px 15px;   	
+}
+.phnav span a{
+	color:white;
+	font-weight:600;
+}
+.phnav span:hover{
+	background:#111;
+}
+.navpath{
+	width: 100%;
+	height: 40px;
+	background:#f6f6f6;
+	margin-bottom:15px;
+}
+.pathtex{
+	width: 1200px;
+	height: 100%;	
+	margin:0 auto;
+}
+.pathtex span{
+	display:inline-block;
+	height: 100%;
+	padding:10px 15px;
+	font-size:10px;
+	color:#666;
+    
+}
+.pathtex span a{
+	font-size:10px;
+	color:#666;
+}
+.detail{
+	width: 1200px;
+	height: 780px;
+	margin:0 auto;
+	margin-bottom:40px;
+	padding-top:20px;
+}
+.detail .left{
+	float:left;
+	width: 452px;
+	height: 595px;
+	position:relative;
+}
+.detail .left .showimg>img{
+	width: 448px;
+	height: 448px;
+	overflow:hidden;
+}
+.detail .left .showimg{
+	padding:2px 0  0 2px;
+	width: 452px;
+	height: 460px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid #d9d9d9;
+    margin-bottom:10px;
+}
+.detail .left .showimg>i{
+	display:block;
+	position:absolute;
+	width: 20px;
+	height: 20px;
+	right:1px;
+    bottom:0;
+    z-index:3;
+}
+.detail .imgtag{
+	width: 450px;
+	height: 70px;
+	overflow:hidden;
+}
+.detail .imgtag img{
+	width: 68px;
+	height: 68px;
+	margin-right:7px;
+	cursor:pointer;
+	padding:1px;
+	border: 1px solid #f2f2f2;
+    background-color: #f7f7f7;
+}
+.detail .imgtag .actimg{
+	border:1px solid orange;
+}
+.detail .productTex{
+	width: 450px;
+	height: 47px;
+	padding: 12px 0;
+	line-height:23px;
+	border-bottom:1px dashed #efefef;
+	position:relative;
+}
+.detail .productTex p{
+	float:left;
+	line-height:20px;
+	color:#999;
+	display:inline-block;
+    font-size:12px;
+    max-width:200px;
+    text-overflow:ellipsis;
+    white-space:nowarp;
+    overflow:hidden;
+}
+.detail .productTex>span{
+	   float:left;
+	   display:inline-block;
+	   color:#999;
+	   font-size:12px;
+	   width: 70px;
+	   height: 20px;
+	   line-height:20px;
+	   text-align:right;
+	   position:relative;
+	  margin-left:18px;
+}
+.detail .product span i{
+	display:block;
+	width: 12px;
+	height: 12px;
+	position:absolute;
+	top:0;left:0;
+}
+.detail .right{
+   float: right;
+    width: 720px;
+    padding-left:30px;
+    position: relative;
+    min-height: 634px;
+}
+.detail .right .product{
+	min-height: 538px;
+	
+}
+.detail .right .title{
+	width: 720px;
+	height: 80px;
+	position:relative;
+	margin-bottom:10px;
+} 
+
+.detail .right .title .time{
+	display:inline-block;
+	position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 18px;
+    background: #333;
+    color: #fff;
+    padding: 0 5px 0 13px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.detail .right .title p:nth-child(1){
+	height:20px;
+	line-height:20px;
+}
+.detail .right .title h3{	
+	font-size: 20px;   
+    line-height: 26px;
+    color: #5e5e5e;
+    font-weight: 600;
+    max-height: 50px;
+    overflow: hidden;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    }
+.detail .right .title p:nth-child(3){
+	font-size: 14px;
+    color:red;
+    line-height:20px;
+    max-height: 85px;
+    overflow: hidden;
+    max-height:40px;
+}
+.detail .right .product h4{
+	width: 720px;
+	height: 94px;
+	margin-bottom: 20px;
+    padding: 20px 10px 0 20px ;
+    background:#efefef;
+    position:relative;
+}
+.detail .right .product h4 p{
+	font-size: 20px;
+	height: 34px;
+	line-height:34px;
+    font-family: arial;
+    display:inline-block;
+    margin-left:20px;
+  
+    }
+.detail .right .product h4 p label{
+	display:inline-block;
+	line-height:34px;
+	font-size:12px;
+	width: 60px;
+	color: #888;
+    float: left;
+	text-align:center;
+}
+.detail .right .product h4 i{
+    font-style:normal;
+	font-size:12px;
+	height: 20px;
+	padding:2px 4px;
+	margin:0 2px;
+	border:1px solid red;
+	color:red;
+}
+.detail .right .product h4 p:nth-child(1){
+	font-family: Arial;
+    font-size: 24px;
+    color: #e3101e;
+    font-weight: 700;
+  
+}
+.detail .right .product span:nth-child(4){
+	color:#888;
+	margin-left:20px;
+}
+.detail .right .product h5{
+	height:40px;
+	margin-bottom:5px;
+}
+.detail .right .product h5 span{
+	 display:inline-block;
+	 float: left;
+     font-size: 12px;
+     width: 60px;
+     text-align: left;
+     color: #999;
+    line-height: 32px;
+    overflow: hidden;
+}
+
+.detail .right .product h5 p {
+	height: 35px;
+    line-height: 35px;
+    padding-right 35px ;
+    overflow: hidden;
+    color:#888;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display:inline-block;
+	position:relative;
+}
+
+.detail  .product h5 p>i{
+	display:inline;
+	width: 6px;
+	height: 6px;
+	font-style:normal;
+	transform:rotateY(90deg);	
+	line-height:30px;
+	margin-left:10px;
+}
+.detail .size{
+	height: 40px;
+}
+.detail  .size p{
+	float: left;
+    position: relative;
+    color:#888;
+    font-size: 12px;
+    padding: 3px 15px;
+    margin: 0 10px 5px 0;
+    font-weight:500px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+}
+.detail .right .product .count{
+	width: 140px;
+	height: 40px;
+	line-height:40px;
+	float:left;
+}
+.detail .product .count li{
+	width: 70px;
+	height: 40px;
+	float:left;
+	list-style:none;
+}
+.detail  .count li>em{
+	display:inline-block;	
+	font-style:normal;
+    line-height: 28px;
+    text-align:center;
+    background-color: #f9f8f8;
+    color: #333;
+    width: 20px;
+    height: 30px;
+    float:left;
+    border:1px solid #ccc;
+}
+.detail .product .count li>em:nth-child(1){
+	border-right:none;
+}
+.detail .product .count li>em:nth-child(3){
+	border-left:none;
+}
+.detail .product .count li>span{
+	display:inline-block;
+	width: 30px;
+	line-height:30px;
+	text-align:center;
+	height: 30px;
+	border:1px solid #ccc;
+}
+.detail .product .submit{
+	float:left;
+	width: 140px;
+	height: 35px;
+	margin-left:35px;
+	background-color: red;
+    border: 1px solid red;
+    font-size:16px;
+    color:white;
+}
+/*事件样式*/
+.detail .right .product h5 .pactive{
+	color:red;
+	border:1px solid red;
+}

@@ -208,6 +208,10 @@ a{text-decoration:none;}
     border: 1px solid #fff;
     transition: border .1s ease 0s;
 }
+.gooditems .item .bigimg img{
+	width: 210px;
+	height: 210px;
+}
 .gooditems .item>a{
 	display:block;
 }
@@ -296,10 +300,11 @@ a{text-decoration:none;}
 	font-size:10px;
 }
 .gooditems .item .juan{
-	width: 80px;
-	height: 20px;
+	display:inline-block;
+	font-style:normal;
+	padding:10px ;
 	font-size:10px;
-    border: 1px solid #e1301e;
+    /*border: 1px solid #e1301e;*/
     color: #e1301e;
     line-height: 20px;
     padding: 0 2px;
