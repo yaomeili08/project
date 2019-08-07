@@ -1,5 +1,75 @@
-*{margin:0;padding:0;}
+*{margin:0;padding:0;box-sizing:border-box;}
 ul li{list-style:none;}
+#read{
+    top: 100px;
+    left: 214.5px;
+    width: 950px;
+    height: 600px;
+    padding: 16px 0px 5px 0px;
+    position: absolute;
+    top: 100px;
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    float: left;
+    z-index: 9999;
+    background: #fff;
+    font-family: 'Microsoft Yahei';
+    overflow:hidden;
+    display:none;
+}
+#read h2{
+	margin:0 auto;
+   width: 850px;
+   height: 40px;
+   line-height:40px;
+   text-align:center;
+    font-size:16;
+    font-weight:500;	
+}
+#read>p{
+	padding:10px 10px;
+	font-size: 12px;
+    color: #585858;
+    line-height: 24px
+}
+#read p:nth-child(3){
+	color:blue;
+	font-size:14px;
+	padding-left:20px;
+}
+.read{
+	display:none;
+}
+#read .readtex{
+	width: 850px;
+	margin:0 auto;
+	padding-top: 15px;
+	padding:10px 20px;
+	height: 350px;
+	border: 1px solid #e6e6e6;
+    overflow-y: auto;
+  
+    font-size: 12px;
+    line-height: 24px;
+    color: #333;
+}
+#read .think{
+	height: 60px;
+	padding-top:20px;
+	width: 860px;
+	text-align:center;
+}
+#read .think span{
+	display:inline-block;
+	padding:5px 15px;
+	font-size:14px;
+	margin-right:30px;
+	border:1px solid #ccc;
+}
+#read .think span:nth-child(2){
+	color:red;
+	border:1px solid red;
+}
 .res_head{
 	width: 990px;
 	height: 120px;
@@ -32,7 +102,7 @@ ul li{list-style:none;}
 }
 .res_main .res_msg{
 	width: 600px;
-	height: 352px;
+	height: 500px;
 	margin:0 auto;
 	
 }
@@ -53,29 +123,52 @@ ul li{list-style:none;}
 .res_msg p{
 	width: 100%;
 	height: 60px;
-	padding-left:100px;
-	 color:#888;
+	line-height:60px;
+	padding-left:80px;
+	color:#888;
 }
-.res_msg p:nth-child(5) input{
-	width: 120px;
+
+.res_msg .test input{
+	margin-top:10px;
+	float:left;
+	width:120px;
 }
+.res_msg .test .cantex{
+	margin:5px  5px 10px;
+	float:left;
+}
+
 .res_msg p span{
 	display:inline-block;
 	width: 60px;
+	line-height:40px;
     font-size:12px;
     color:#888;
+    float:left;
 }
 .res_msg p input{
 	width: 250px;
 	height: 35px;
 	line-height:35px;
 	font-size:12px;
+	float:left;
     padding-left:5px;  
 }
 .res_msg p i{
 	font-style:normal;
+	font-size:12px;
+	padding-left:5px;
+	line-height:40px;
+	display:none;
+	float:left;	
+}
+.res_msg p .itrue{
+	color:green;
+	display:block;
+}
+.res_msg p .ierror{
 	color:red;
-	font-size:12px;	
+	display:block;
 }
 .res_msg .submit{
 	display:block;
@@ -86,7 +179,7 @@ ul li{list-style:none;}
 	line-height:40px;
 	text-align:center;
 	border-radius:15px;
-	margin:10px 0 0 40%;
+	margin:10px 0 0 35%;
 }
 .footbox {
 	 border-top:	1px solid #dd00a7;
