@@ -124,7 +124,8 @@
 			 		$(".gooditems ").on("click",".item",function(){
 			 			console.log(this);
 			 			 event.preventDefault();
-			              var o ={};			 			 
+			              var o ={};
+			             o.git = $(this).data("git");
 			 			 o.bigimg = $(this).find('.bigimg img')[0].src;
 			 			 o.price = $(this).find(".price").html();
 			 			 o.title = $(this).find("h4 a").html();			 	
@@ -136,7 +137,7 @@
 			 		    o.imglist =  (strimg).substring(0,strimg.length-4);
 			 		    //console.log(o.imglist);
 			 			let str = self.objToStr(o);	
-			 			console.log(o,str);
+			 			//console.log(o,str);
 			 						 			
 			 			//console.log(str);
 			 			location.href = '../html/商品详情页.html?' + str;

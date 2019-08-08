@@ -3,11 +3,51 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>购物车页面</title>
-		<style>
-			*{margin:0;padding:0;}
-			ul li{list-style:none;}
-		</style>
+		<link rel="stylesheet" href="../css/car.css" />
+		<script src="../js/jquery-3.4.1.js"></script>
+		<script src="../js/common.js"></script>
 	</head>
 	<body>
+		<div class="carhead">
+			<a href="../indexgome.html"></a>
+			<h2>购物车</h2>
+		</div>
+		<div class="carMain">
+			<div class="carNav">
+				<input class="choose" type="checkbox" /><span>全选</span>
+				<span>商品信息</span>
+				<span>单价</span>
+				<span>数量</span>
+				<span>小计</span>
+				<span>操作</span>
+			</div>
+			<div class="carContain">
+				<h2>国美自营</h2>
+				<!--<div class="item">
+					<input type="checkbox" />
+					<a href="#"><img src="http://gfs17.gomein.net.cn/T1yBKsB5bv1RCvBVdK_80.jpg" alt="" /></a>
+					<p class="title">荣耀 (honor) 荣耀畅玩8 2GB+32GB 全网通版 极光蓝<br>
+						<i></i>&nbsp;&nbsp;<i></i>
+					</p>
+					<p class="size">颜色 ：极光蓝<br>版本 ：2GB+32GB</p>
+					<p class="price">&yen;<b>599.00</b></p>
+					<p class="num"><em class="add">+</em><span>1</span><em class="sub">-</em></p>
+					<p class="itotal">&yen;<b>1998</b></p>
+					<p class="del"><input type="text" value="删除" /></p>
+				</div>-->
+				
+			</div>
+		</div>
+		<div class="carBtm">
+			<div class="carBtmNav">
+			  <input class="choose" type="checkbox" /><span>全选</span>
+			  <span class="delAll">删除</span>
+			  <h3 >已选择<b class="addCount">0</b>件商品</h3>
+			  <p class="total">总计&yen;<b class="tolPrice">&yen;0.000</b></p>
+			  <p class="buy">结算</p>
+			</div>
+			
+		</div>
+		<script src="../js/car.js"></script>
 	</body>
 </html>

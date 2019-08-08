@@ -1,5 +1,36 @@
 //头部
 $(function(){
+	            //顶部导航数据渲染
+	            function creHeadNav(data){
+	            	var headnav = data;
+	            	console.log(data);
+	            	var str = "";
+	            	 str = headnav.map((ele,index)=>{
+	            		var str1 = `<dt><a href="#">${ele.title}</a></dt>`;
+	            		var str2 = "";
+	            		 
+	            		str2 = ele.nav.map((item,i)=>{
+	            			var str3 = "";
+	            			str3 = item.map((ele)=>{
+	            			  return `<li><a href="#">${ele}</a></li>`;
+	            			}).join("");
+	            			str3 = `<ul>${str3}</ul>`;
+	            			return str3;
+	            		}).join("");
+	            		str2 = `<dd>${str2}</dd>`;
+	            		//console.log(str2,"<br>");
+	            		str1 =  `<dl>${str1}${str2}</dl>`;
+	            		console.log(str1,"---");
+	            		return str1;
+	            	}).join("");
+	            	
+	            	$("#topbody .hidebox4").html(str);
+//	            	$("#topbody a").hover{
+//	            		$(this).toggleClass('act1');
+//	            	}
+	            }
+	            //获取数据并初始化
+	            $.getJSON("json/headnav.json", json =>(creHeadNav(json)));
 				//顶部导航
 				//li hover下拉菜单出现
 				let li1 = $("#topbody .lis");				
@@ -132,7 +163,7 @@ $(function(){
 		     	    this.i.hover(function(){
 		     	    	let index = $(this).index();
 		     	    	$(this).addClass("bani").siblings().removeClass('bani');
-		     	    	 self.lis.eq(index).fadeIn().siblings().fadeOut();
+		     	    	 self.lis.eq(index).stop().fadeIn().siblings().fadeOut();
 		     	    	 self.lis.css("background",libg[index]);
 		     	    	 self.index = index;
 		     	    })
@@ -147,6 +178,7 @@ $(function(){
 		       let banner = new Banner();  
 		         banner.init();
 		       
+		       //楼层数据渲染
                
 		      
 		        //小轮播图

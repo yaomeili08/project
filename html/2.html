@@ -92,6 +92,27 @@ $(".block").each(function(index, item) {
                 })
                 
                 o.tex = $(item).find(".item-promotional-language").html().replace("<!---->","")
+                
+                //楼层数据
+                var arr1 = [];
+                $(".main .main_inner li").each(function(index,item){
+                	var o = {};
+                	o.title = $(this).children('a').attr("title");
+                	o.img = $(this).find("img")[0].src;
+                	o.price = $(this).find(".p_price").text();
+                	arr1.push(o);
+                })
+                JSON.stringify(arr1);
+                
+                //轮播右边图片
+                
+                 var arr2 = [];
+                $(".main_warp .mc_r_inner li").each(function(index,item){
+                	
+                	var img = $(this).find("img")[0].src;
+                	arr2.push(img);
+                })
+                JSON.stringify(arr2);
 	  </script>          	            	            	           
 	</body>
 </html>

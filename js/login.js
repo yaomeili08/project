@@ -49,8 +49,8 @@ $(function(){
 	 	else{ 
 	 	  //判断自动登陆按钮是否选中 将用户名及密码存入cookie
 	 	  if(auto){
-	 	 	  Cookie.setItem("username",user);
-	 	 	  Cookie.setItem("password",psw); 	 	   
+	 	 	  Cookie.setItem("username",user,7);
+	 	 	  Cookie.setItem("password",psw,7); 	 	   
 	 	  }
 	 	 queryAuto = `username=${user}&password=${psw}`;
 	 	 	//发送请求

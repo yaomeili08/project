@@ -295,15 +295,18 @@ i{font-style:normal;}
 	position:absolute;
 	right:-100px;
 	top:30px;	
-	width: 1198px;
-	height: 148px;
+	width: 1200px;
+	height: 170px;
 	background:#fff;
 	display:none;
 	z-index: 3;
 }
+#topbody .nav .l5 .hidebox4 .acta1{
+	color:red;
+}
 #topbody .nav .l5 .hidebox4 dl{
 	float: left;
-    padding: 0 15px 0 40px;
+    padding: 0 15px 0 30px;
     border-left: 1px solid #f3f3f3;
     margin: 15px 0;
 }

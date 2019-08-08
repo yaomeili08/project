@@ -1,0 +1,239 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+.carhead{
+	width: 990px;
+	height: 120px;
+	margin:0 auto;
+}
+.carhead>a{
+	width: 125px;
+	height: 56px;
+	display:block;
+	float:left;
+    margin: 32px 10px 0 0;
+    background:url("http://css.gomein.net.cn/gmpro/1.0.0/public/1.0.0/css/i/logo.png");
+}
+.carhead>h2{
+	width: 175px;
+	height: 120px;
+	font: 400 26px/120px 'microsoft yahei';
+    float: left;
+    color:rgba(255,255,255,0.1);
+    display: inline;
+    padding: 0 40px 0 0;
+    background:url("http://css.gomein.net.cn/gmpro/2.0.0/cart/2.9.4/css/i/gwc.png")no-repeat 0 32px;
+}
+.carMain{
+	width: 990px;
+	margin:0 auto;
+}
+.carMain .carNav{
+	width: 990px;
+	height: 46px;
+	background: #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    line-height:46px;
+}
+.carMain .carNav input ,.carBtmNav input{
+	margin:18px 20px 0 10px;
+	display:inline-block;
+	width: 13px;
+	height: 13px;
+	float:left;
+}
+.carMain .carNav span ,.carBtmNav span{
+	display:inline-block;
+	height: 100%;
+	color:#888;
+	font-size:12px;
+}
+.carMain .carNav span:nth-child(2){
+	width: 91px;
+}
+.carMain .carNav span:nth-child(3){
+	width: 390px;
+}
+.carMain .carNav span:nth-child(4){
+	width: 154px;
+}
+.carMain .carNav span:nth-child(5){
+	width: 80px;
+}
+.carMain .carNav span:nth-child(6){
+	width: 154px;
+}
+.carMain .carNav span:nth-child(6){
+	width: 78px;
+}
+.carMain .carContain{
+	margin-top:20px;
+	width: 990px;
+	border:1px solid #ccc;
+    border-radius:5px;
+    padding-bottom:20px;
+}
+.carContain>h2{
+  height: 40px;
+  color:#888;
+  line-height:40px;
+  padding-left:10px;
+  font-size:16px;
+  font-weight:500;
+  border-bottom:1px solid #ccc;
+}
+.carContain .item{
+	padding:20px 0;
+	width: 988px;
+	height: 122px;
+	line-height:122px;
+	border-bottom:1px solid #ccc;
+}
+.carContain .item input{
+	margin:0px 20px 0 10px;
+	display:inline-block;
+	width: 13px;
+	height: 13px;
+	float:left;
+}
+.carContain .item a{
+	display:inline-block;
+	margin:
+	width: 84px;
+	height: 84px;
+	padding:1px;
+	border: 1px solid #e6e6e6;
+	overflow:hidden;
+	margin-right:20px;
+	float:left;
+}
+.carContain .item a>img{
+	width: 80px;
+	height: 80px;
+}
+.carContain .item p{
+	float:left;
+	width: 208px;
+	color:#333;
+	line-height:20px;
+	font-size:12px;
+}
+.carContain .item p>i{
+	margin-top:10px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+    overflow: hidden;
+    background-position: -872px 0;
+    background-image: url('http://css.gomein.net.cn/gmpro/2.0.0/cart/2.9.4/css/i/sprite.png?v=0.4.5');
+}
+.carContain .item p>i:nth-child(3){
+	background-position: -515px -64px;
+}
+.carContain p:nth-child(4){
+	padding: 8px 0 10px 8px;
+    color: #a7a7a7;
+    width: 130px;   
+}
+.carContain .item .price{
+	width: 140px;
+    padding:10px 20px 0 40px;
+}
+.carContain .item .num{
+	width: 80px;
+	padding:10px 5px;
+	margin-left:40px;
+}
+.carContain .num em{
+	display:inline-block;
+	font-style:normal;
+	width: 17px;
+	height: 22px;
+	line-height:22px;
+	text-align:center;
+	font-size:10px;
+	color:#333;
+	border:1px solid #ccc;
+}
+.carContain .num span{
+	display:inline-block;
+	height: 22px;
+	width: 30px;
+	text-align:center;
+	line-height:22px;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	
+}
+.carContain .item .itotal{
+    width: 100px;
+    padding:10px 0px 10px 30px;
+}
+.carContain .item .del{
+	width: 80px;
+	padding:10px 0 10px;
+	margin-left:0;
+}
+.carContain .item .del input{
+	display:inline-block;
+	height: 22px;
+	width:40px;
+	line-height:22px;
+	text-align:center;
+}
+.carBtm{
+	margin-top:20px;
+	width: 100%;
+	height: 60px;
+	background:#eee;
+}
+.carBtm .carBtmNav{
+     width: 990px;
+     height: 100%;
+     margin:0 auto;
+     padding:15px 0;
+     position:relative;
+}
+.carBtm .carBtmNav input:nth-child(1){
+	margin:15px 15px 0 10px ;
+	float:left;
+	line-height:40px;
+}
+
+.carBtm .carBtmNav span{
+	width: 50px;float:left;
+	line-height:40px;
+}
+.carBtm .carBtmNav h3{
+	margin-left:320px;	
+	float:left;
+	color:#333;
+	line-height:40px;
+	font-size:12px;
+	font-weight:500px;	
+}
+.carBtm .carBtmNav h3 b{
+	font-size:16px;
+	color:red;
+}
+.carBtm .carBtmNav .total{
+	font-size:14px;
+	margin-left:120px;
+	width:120px;
+	height: 30px;
+	float:left;	
+	line-height:40px;
+}
+.carBtm .carBtmNav .total b{
+	color:red;
+	font-size:16px;
+	padding-left:10px;
+}
+.carBtm .carBtmNav .buy{
+	line-height:40px;
+	width: 60px;
+	text-align:center;
+	float:right;
+	margin-right:30px;
+	background:red;
+	color:white;
+}
