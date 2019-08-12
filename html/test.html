@@ -3,21 +3,73 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<script src="../js/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../css/index.css" />
+		<link rel="stylesheet" href="../css/index.css" />
+		<script src="../js/jquery-3.4.1.js"></script> 
+		<script src="../js/index.js"></script>
+		
 	</head>
 	<body>
-		<script>
-			
-			function create(data){
-				console.log(data,"000");
-			}
-			 //$.getJSON("../json/lou01.json", json =>(create(json)));
-			 function creat(data){
-				console.log(data,"000");
-			}
-			 $.getJSON("../json/loufirst.json", json =>(create(json)));
-		 
-			$.getJSON("../json/goodlistmi.json",json=>(console.log(json)));
-     </script>
+	
 	</body>
+	<script>
+		
+		 
+		
+		 	function creatTagr(data){
+		 		//console.log(data);
+		 		var html = "";
+		 		 html = data.map((ele)=>{
+		 		   //文字部分 lnav
+		 		   var strTil = "";
+		 		  strTil =  ele.title.map((item)=>{
+		 		   	 return `<a href="#">${item} &gt;</a>`;
+		 		   }).join("");
+		 		  //title
+		 		  strTil = `<h3 class="title">${ strTil}</h3>`;
+		 		  
+		 		  var strcon = ""; 
+		 		  strcon = ele.h2tex.map((item)=>{
+		 		  	  //拼接a标签
+		 		  	   var stra = "";
+		 		  	   stra = item.atex.map((ele)=>{
+		 		  	   	   return `<a href="#">${ele}</a>`;
+		 		  	   }).join("");
+		 		  	    
+		 		  	   //整个h3 
+		 		       return `<h3>
+		 						 <span>${item.title}</span>
+		 						 <p>${stra}</p>
+		 					   </h3>`;	 		  	   
+		 		  }).join("");
+		 		  //contex
+		 		  strcon = `<div class="contex">${strcon}</div>`;
+		 		  
+		 		  //整个左边文字部分
+		 	     var strl = `<div class="lnav">${strTil}${strcon}</div>`;
+		 		  
+		 		  //右边图片
+		 		   var strR = '';
+		 		   var adtag = ele.img1.map((ele)=>{
+		 		   	    return `<a href="#"> <img src="${ele}" /></a>`;
+		 		   }).join("");
+		 		   //小图部分
+		 		   adtag = `<ul class="adtag">${adtag}</ul>`;
+		 		   //整个右边
+		 		   strR= `<div class="rnav">${adtag} 
+		 					<a href="#"><img src='${ele.img2} '/></a>
+		 					</div>`;
+		 			return `<div class="hidenav">${strl}${strR}</div>`; 
+		 		}).join(''); 
+		 	   //插入document
+		 	   $("body").html(html);
+	       }
+		 //右边
+		 //$.getJSON("../json/navRight.json", json =>(creatTagr(json)) );
+		
+		//youlike
+	
+		  //楼层1
+
+	</script>
 </html>

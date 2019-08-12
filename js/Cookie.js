@@ -16,8 +16,13 @@ let Cookie = {
             if (name == arr[0]) return arr[1];
         }
     },
-    setItem(name, value, days) {
-        if (days) {
+    setItem(name, value, days, path) {
+    	if(path){
+    		var date = new Date();
+            date.setDate(date.getDate() + days);
+            document.cookie = `${name}=${value};expires=${date};path=${path}`;
+    	}
+        else if (days) {
             var date = new Date();
             date.setDate(date.getDate() + days);
             document.cookie = `${name}=${value};expires=${date}`;

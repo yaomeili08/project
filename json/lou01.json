@@ -1,5 +1,25 @@
-[
-	[
+[{
+"title":"1F 手机通讯",
+"nav" :["优质大牌","时尚新品","享受低价","机选店铺","精选单品"],
+"imgl":"https://gfs11.gomein.net.cn/T1yCLXBCYv1RCvBVdK.png",
+"ptex":["手机","充值","电器城"],
+"ulleft":
+ [
+   ["荣耀手机","华为手机","三星手机","热销手机","以旧换新"],
+   ["潮3C","配件","全面","保护","小米"],
+   ["iPhone","oppo"]
+  ],
+"banner":["https://gfs12.gomein.net.cn/T1T6KXBmYT1RCvBVdK.jpg",
+          "https://gfs11.gomein.net.cn/T1ylEvBsbv1RCvBVdK.jpg"],
+"showli":["https://gfs13.gomein.net.cn/T1foJXB4Vv1RCvBVdK.jpg",
+           "https://gfs11.gomein.net.cn/T1G5AXBv_v1RCvBVdK.jpg",
+           "https://gfs12.gomein.net.cn/T1GCCXB5bv1RCvBVdK.jpg",
+           "https://gfs10.gomein.net.cn/T1nmEXBCVv1RCvBVdK.jpg",
+           "https://gfs13.gomein.net.cn/T1IYhsBQKT1RCvBVdK.jpg",
+           "https://gfs12.gomein.net.cn/T1eF_XBjDv1RCvBVdK.jpg"],
+"hideli" :
+     [
+	   [
 		{
 			"title": "荣耀畅玩8 2 32G 极光蓝",
 			"img": "https://gfs17.gomein.net.cn/T1yBKsB5bv1RCvBVdK_130.jpg",
@@ -162,5 +182,7 @@
 		"title": "荣耀10青春版  6 64G 渐变蓝",
 		"img": "https://gfs17.gomein.net.cn/T1PNYbBTdT1RCvBVdK_130.jpg",
 		"price": "¥1218.00"
-	}]
-]
+	}
+	]
+   ]
+}]

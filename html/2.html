@@ -95,12 +95,18 @@ $(".block").each(function(index, item) {
                 
                 //楼层数据
                 var arr1 = [];
+                var a = [];
                 $(".main .main_inner li").each(function(index,item){
+                	
                 	var o = {};
                 	o.title = $(this).children('a').attr("title");
                 	o.img = $(this).find("img")[0].src;
                 	o.price = $(this).find(".p_price").text();
-                	arr1.push(o);
+                	a.push(o);
+                	if((index + 1 ) % 10 == 0 && (index != 0)){
+                		 arr1.push(a);
+                		 a = [];
+                	}
                 })
                 JSON.stringify(arr1);
                 
@@ -113,6 +119,58 @@ $(".block").each(function(index, item) {
                 	arr2.push(img);
                 })
                 JSON.stringify(arr2);
+                
+                
+                //选项卡数据
+                #subnav  .fullcategory 15
+                 var arr = [];
+                 $("#subnav .fullcategory").each(function(index,ele){
+                 	var o = {};
+                 	o.title = [];
+                 	$(this).find(".fullcategory-title a").each(function(i,ele){
+                 		   o.title.push(ele.title);
+                 	});
+                 	o.h2tex = [];                 	
+                 	$(this).find(".fullcategory-content-box .fullcategory-content ").each(function(i,ele){
+                 		  var o2 = {};
+                 		  o2.title = $(ele).find(".title").text();
+                 		  o2.atex = [];
+                 		 
+                       $(ele).find(".list a").each(function(i,ele){               	 	   
+                	 	     o2.atex.push(ele.title);               	 	   
+                	    }) 
+                	    o.h2tex.push(o2);
+                 	 });
+                 	o.img1 = [];
+                    $(this).find(".fullcategory-right .brand-box img").each(function(i,e){
+                    	   o.img1.push(e.src);
+                    })
+                 	o.img2 = $(this).find(".fullcategory-right .category-img img").attr("src");
+                 	  arr.push(o);
+                 })
+                 
+                 //右边文字
+                 var rnav = [];
+                $(".fullcategory-content-box .fullcategory-content ").each(function(index,ele){
+                	 var o = {};
+                	 o.title = $(this).find(".title").text();
+                	  var a= [];
+                   $(ele).find(".list a").each(function(i,ele){               	 	   
+                	 	    a.push(ele.title);               	 	   
+                	 })
+                	 o.atex = a;
+                	 rnav.push(o);
+                })
+                
+                //ul选项卡
+                var arrli = [];
+                $("#j-imgload-recomm ul li").each(function(index,item){
+                	var o ={};
+                	o.img =  $(item).find("img")[0].src;
+                	o.title = $(item).find(".guess_title").text();
+                	o.price = $(item).find(".guess_price").text();
+                	arrli.push(o);
+                })
 	  </script>          	            	            	           
 	</body>
 </html>

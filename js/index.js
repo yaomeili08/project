@@ -3,7 +3,7 @@ $(function(){
 	            //顶部导航数据渲染
 	            function creHeadNav(data){
 	            	var headnav = data;
-	            	console.log(data);
+	            	//console.log(data);
 	            	var str = "";
 	            	 str = headnav.map((ele,index)=>{
 	            		var str1 = `<dt><a href="#">${ele.title}</a></dt>`;
@@ -17,17 +17,12 @@ $(function(){
 	            			str3 = `<ul>${str3}</ul>`;
 	            			return str3;
 	            		}).join("");
-	            		str2 = `<dd>${str2}</dd>`;
-	            		//console.log(str2,"<br>");
-	            		str1 =  `<dl>${str1}${str2}</dl>`;
-	            		console.log(str1,"---");
+	            		str2 = `<dd>${str2}</dd>`; 
+	            		str1 =  `<dl>${str1}${str2}</dl>`; 
 	            		return str1;
 	            	}).join("");
 	            	
 	            	$("#topbody .hidebox4").html(str);
-//	            	$("#topbody a").hover{
-//	            		$(this).toggleClass('act1');
-//	            	}
 	            }
 	            //获取数据并初始化
 	            $.getJSON("json/headnav.json", json =>(creHeadNav(json)));
@@ -45,8 +40,8 @@ $(function(){
 			     	$(this).children(".hide").css("display","none");			     	
 			     }
 			     )
-			     $("#topbody .hide a").hover(function(){
-			     	
+			     $("#topbody .hide a").hover(function(){ 
+			     	      $(this).toggleClass("activeA");
 			     })
 			     
 			    //顶部搜索框
@@ -65,41 +60,162 @@ $(function(){
 			    //左边
 			   function creNavl(data){			   	
 			   	   var  str = '';
-			   	  str = data.map(function(ele){
+			   	  str = data.navl.map(function(ele){
 			   	  	  var str1 = '';
 			   	  	 str1 = ele.map(function(item){
 			   	  	 	return `<a href="#">${item}</a>`;
 			   	  	 }).join('');			   	  	 
 			   	  	return `<li>${str1}</li>`;
 			   	  }).join("");			   	  
-			   	  //插入到navbox
-			   	  let a = $(".cateleft .navbox");
-			   	    a.html(str);
+			   	 
+			   	  str = `<ul class="navbox">${str}</ul>`;
+			   	  //插入到catelnav
+			   	  let a = $(".cateleft .catelnav");
+			   	    a.prepend(str);
 			   }
 			   //左边发送请求并渲染
 		     $.getJSON("json/nav.json", json =>(creNavl(json)));
+		        //右边
+		     	function creatTagr(data){
+		 		 
+		 		var html = "";
+		 		 html = data.navr.map((ele)=>{
+		 		   //文字部分 lnav
+		 		   var strTil = "";
+		 		  strTil =  ele.title.map((item)=>{
+		 		   	 return `<a href="#">${item} &gt;</a>`;
+		 		   }).join("");
+		 		  //title
+		 		  strTil = `<h3 class="title">${ strTil}</h3>`;
+		 		  
+		 		  var strcon = ""; 
+		 		  strcon = ele.h2tex.map((item)=>{
+		 		  	  //拼接a标签
+		 		  	   var stra = "";
+		 		  	   stra = item.atex.map((ele)=>{
+		 		  	   	   return `<a href="html/商品列表.html">${ele}</a>`;
+		 		  	   }).join("");
+		 		  	    
+		 		  	   //整个h3 
+		 		       return `<h3>
+		 						 <span>${item.title}</span>
+		 						 <p>${stra}</p>
+		 					   </h3>`;	 		  	   
+		 		  }).join("");
+		 		  //contex
+		 		  strcon = `<div class="contex">${strcon}</div>`;
+		 		  
+		 		  //整个左边文字部分
+		 	     var strl = `<div class="lnav">${strTil}${strcon}</div>`;
+		 		  
+		 		  //右边图片
+		 		   var strR = '';
+		 		   var adtag = ele.img1.map((ele)=>{
+		 		   	    return `<a href="#"> <img src="${ele}" /></a>`;
+		 		   }).join("");
+		 		   //小图部分
+		 		   adtag = `<ul class="adtag">${adtag}</ul>`;
+		 		   //整个右边
+		 		   strR= `<div class="rnav">${adtag} 
+		 					<a href="#"><img src='${ele.img2} '/></a>
+		 					</div>`;
+		 			return `<div class="hidenav hideNav">${strl}${strR}</div>`; 
+		 		}).join(''); 
+		 	   //插入
+		 	   $(".cateleft .catelnav").append(html);
+	       }
+		    //右边
+		   $.getJSON("json/nav.json", json =>(creatTagr(json)) );
+		  
 		     
 		     //切换选项卡		   
 		    //移入对应li
-		   $(" .cateleft .navbox").on("mouseenter","li",function(){
+		   $(" .cateleft ").on("mouseenter",".navbox li ",function(){
 		   	      $(this).addClass('liact').siblings().removeClass('liact');
-		   	      $(this).children("a").css("color","black");
-		   	      let index = $(this).index();		   	     
-		   	      $(".hidenav").eq(index).addClass("hideact");
-		   })
-		    $(" .cateleft .navbox").on("mouseleave","li",function(){
+		   	      $(this).children("a").addClass("Aact");
+		   	      let index = $(this).index();	
+		   	      $(".hidenav").eq(index).addClass("hideact"); 
+		      })
+		    $(".cateleft ").on("mouseleave",".navbox li ",function(){
 		   	      $(this).removeClass('liact');
-		   	      $(this).children("a").css("color","white");
+		   	      $(this).children("a").removeClass("Aact");
 		   	      let index = $(this).index();		   	      
-		   	      $(" .hidenav").eq(index).removeClass("hideact");
+		   	      $(".hidenav").eq(index).removeClass("hideact");
 		   })	
-		   //移入hidenav
-		    $(".catelnav .hidenav").hover(function(){
-		           $(this).toggleClass("hideact");
-		            let index = $(this).index();
-		          $(" .cateleft .navbox li").eq(index).toggleClass("liact");
+//		 
+		    $(".catelnav").on("mouseenter",".hidenav",function(){
+		    	  $(this).addClass("hideact");
+		            let index = $(this).index()-1;
+		          $(" .cateleft .navbox li").eq(index).addClass("liact");
+		          var curli = $(" .cateleft .navbox li").eq(index); 
+		          curli.find("a").addClass("Aact");
 		    })
 		    
+		    $(".catelnav").on("mouseleave",".hidenav",function(){
+		    	  $(this).removeClass("hideact");
+		            let index = $(this).index()-1;
+		          $(" .cateleft .navbox li").eq(index).removeClass("liact");
+		          var curli = $(" .cateleft .navbox li").eq(index); 
+		          curli.find("a").removeClass("Aact");
+		    })
+            $(".catelnav").on("mouseenter",".contex a",function(){
+            	 $(this).css("color","red"); 
+            })
+		     $(".catelnav").on("mouseleave",".contex a",function(){
+            	 $(this).css("color","#333"); 
+            })
+		     
+		   //youlike
+		   function createYl(data){ 
+		   	 var html = ""; 
+		   	 data.forEach((item,index)=>{ 
+		   	 	 html +=` <li>
+             	 <a href="html/商品列表页.html">
+             	 	<img src="${item.img}"  />
+             	 	<p>${item.price}</p>
+             	 	<h3>${item.title}元</h3>
+             	 </a>
+             	 </li>`;
+             	 if((index + 1) % 6 == 0 && index != 0){ 
+		   	 	  $(".yl_box .yl_ulbox ").append(`<ul class="yl_nav">${html}</ul>`);
+		   	 	      html = "";
+		   	 	} 
+		   	 })
+		   	 //事件绑定
+		   	      var l = 1220;
+		   	 	   var i = 0;
+		   	 	   var lw = 0;
+		   	 $(".yl_title ").on("click","i",function(){
+		   	 	  var iclass = this.className; 
+		   	 	  if(iclass == "ylprev"){ 
+		   	 	  	   i -- ;
+		   	 	  	 if(i < 0){
+		   	 	  	 	i = 2;
+		   	 	  	 } 
+		   	 	  	  lw =  l * i ;
+		   	 	  	$(".yl_box .yl_ulbox").css("left",-lw +"px");
+		   	 	  }else if(iclass == 'ylnext'){ 
+		   	 	  	   i ++;
+		   	 	  	 if(i >= 3){
+		   	 	  	 	i = 0;
+		   	 	  	 } 
+		   	 	  	 lw =  i * l ; 
+		   	 	  	$(".yl_box .yl_ulbox").css("left",-lw +"px");
+		   	 	  }
+		   	 })
+		   	 
+		   }
+		   
+//		   $.getJSON("json/youlike.json", json =>(createYl(json)) );
+           //发送请求获取数据
+             $.ajax({
+            type: "post",
+            url: "php/ylget.php", 
+            dataType: "json",
+            success:function(response){
+            	createYl(response);
+            }
+          })
 		    //banner
 		   //背景图数据
 		  var  libg = ["rgb(226, 0, 50)",'rgb(224, 32, 9)',"rgb(99, 161, 234)","green",
@@ -109,8 +225,7 @@ $(function(){
 		     		this.index = 0;
 		     		this.lis = $(".bannerbox ul li");
 		     		this.i = $(".imgbox ol i"); //焦点
-		     		this.box = $(".bannerbox");
-//		     		console.log(this.nextimg,this.previmg);
+		     		this.box = $(".bannerbox"); //
 		     		this.length = this.lis.length;		     		
 		     	}
 		     	init(){
@@ -141,12 +256,12 @@ $(function(){
 		     		this.i.eq(this.index).addClass("bani").siblings().removeClass('bani');		    		
 		     	}
 		     	mouevent(){
-		     		//移入停止
-		     		$(".bannerbox , .navbox , .hidenav").hover(()=>{
+		     		//移入停止		     		
+		     		$(".bannerbox , .catelnav").hover(()=>{
 		     			clearInterval(this.timer);
 		     		},()=>{
                           this.auto();
-                     })		     	
+                     }) 
 		     		// 点击按钮next	
 		     		$(".imgbox .next").click(()=>{
 		     			this.next();
@@ -170,17 +285,69 @@ $(function(){
 		     	}
 		     	
 		     } 
-		    
-		     
-		    
 		       
 		       //大轮播图实例化
 		       let banner = new Banner();  
 		         banner.init();
 		       
-		       //楼层数据渲染
-               
-		      
+		       //楼层数据渲染hide部分
+		     
+		        function createLou(data){ 
+		        	var dat = data[0]; 
+		        	var tag = dat.nav; 
+		            //拼接nav
+		        	var strtag = tag.map((item)=>{ 
+		        	  return`<li><span>${item}</span></li>`;
+		        	}).join("");
+		            strtag = ` <ul class="tag">${strtag}</lu>`; 
+		            //拼接subtemp
+		            //subleft
+		            var strp = '';
+		            strp = dat.ptex.map((item)=>{
+		            	return `<a href="#">${item}</a><em>/</em>`;
+		            }).join("");
+		            strp = `<p>${strp}<p>`;
+		        	
+		        }
+
+		        //hidebox
+		        function createHide(data,phone,num){
+		        	var hide = data[num];
+		        	var strHide = "";
+		        	strHide = hide.map((item)=>{
+		        		var strul = "";
+		        		 strul =  item.map((ele)=>{
+		        		  	 return `<li class="hideli">
+       	     		                  <a href="html/商品列表.html">
+       	     			              <img src="${ele.img}" />
+       	     			              <p>${ele.title}</p>
+       	     			              <span>${ele.price}</span>
+       	     		                  </a> 
+       	     	                     </li>`;
+		        		  }).join("");
+		        		 return strul = `<div class="subright">
+       	 	                        <div class="tempad">
+       	 	                        ${strul}
+       	 	                         </div>
+       	                             </div>`; 
+		        	}).join("");
+		        	
+		        	$(`.${phone} .subtemp`).append(strHide);
+		        	$(".lou .subtemp").on("mouseenter",".hideli p , .hideli span",function(){
+		        		   $(this).css("color","red");
+		        	})
+		        	$(".lou .subtemp").on("mouseleave",".hideli p, .hideli span",function(){
+		        		   $(this).css("color","#333");
+		        	})
+		        }
+                //发送请求获取数据
+              $.getJSON("json/louhide.json", json =>(createHide(json,"phone",0)) );
+              $.getJSON("json/louhide.json", json =>(createHide(json,"computer",1)) );
+		      $.getJSON("json/louhide.json", json =>(createHide(json,"home",2)) );
+		      $.getJSON("json/louhide.json", json =>(createHide(json,"kitchen",3)) );
+		      $.getJSON("json/louhide.json", json =>(createHide(json,"market",4)) );
+		      $.getJSON("json/louhide.json", json =>(createHide(json,"household",5)) );
+		      $.getJSON("json/louhide.json", json =>(createHide(json,"cartool",6)) );
 		        //小轮播图
 		      //循环绑定轮播
 		       let minban = $(".minbanner");
@@ -205,10 +372,8 @@ $(function(){
 		        		index ++;
 		        		if(index >= length){
 		        			index = 0;
-		        		}
-		        		//console.log(length);
-		        		//console.log(index);
-		        	    lis.eq(index).fadeIn().siblings().fadeOut();
+		        		} 
+		        	    lis.eq(index).stop().fadeIn().siblings().fadeOut();
 		        	    is.eq(index).addClass("acti").siblings().removeClass("acti");
 		        	      return index;
 		        	}
@@ -217,7 +382,7 @@ $(function(){
 		        		if(index < 0){
 		        			index = index = length;
 		        		}
-		        		lis.eq(index).fadeIn().siblings().fadeOut();
+		        		lis.eq(index).stop().fadeIn().siblings().fadeOut();
 		        		is.eq(index).addClass("acti").siblings().removeClass("acti");
 		        	     return index;
 		        	}
@@ -236,7 +401,7 @@ $(function(){
 		        	is.mouseenter(function(){      		
 		        		index = $(this).index(); 
 		        	  $(this).addClass("acti").siblings().removeClass("acti");	
-		        	  lis.eq(index).fadeIn().siblings().fadeOut();
+		        	  lis.eq(index).stop().fadeIn().siblings().fadeOut();
 		        	})
 		        	prevli.click(function(){
 		        		index = prev(index);		        		
@@ -291,8 +456,7 @@ $(function(){
 			   	       window.onscroll = function(ev){
 			        	 var t = window.scrollY ;		        		 	
 			       //屏幕距离小于一楼的距离时隐藏  超过第一层浮动导航显示 到达底部隐藏
-		   	   	     	 if(t < lou1 || t > loubt - 200){	
-		   	   	     	 	console.log("111");  	     	 	
+		   	   	     	 if(t < lou1 || t > loubt - 200){ 
 		   	   	     		fnav.style.display = 'none';
 		   	   	     	 }
 		   	   	     	else{
@@ -319,13 +483,22 @@ $(function(){
 		      
 		      //侧边广告
 		      $(".asidead ul li").mouseenter(function(){
-		      	  $(this).toggleClass("asideli");	
+		      	  $(this).addClass("asideli").siblings().removeClass("asideli");	
 		      	  $(this).find(".asideshow").css("display","block");	      	  
 		      })
 		      
 		     $(".asidead ul li").mouseleave(function(){
+		     	$(this).removeClass("asideli")
 		        $(this).find(".asideshow").css("display","none");
 		        });
 		      $(".adshow").show(2000);
 		        
 			});
+			
+			//购物车数量显示
+//			var carnum = Cookie.getItem("goodnum") || "0"; 
+//			$(".#carNum").text(carnum);
+//			$(" #carNum").hover(function(){
+//				console.log("0000");
+//			})
+			

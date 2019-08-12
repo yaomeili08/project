@@ -3,15 +3,148 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>商品详情页</title>
+		<link rel="stylesheet" href="../css/index.css" />
 		<link rel="stylesheet" href="../css/mimor.css" />
 		<link rel="stylesheet" href="../css/datadetail.css" />
 		<script src="../js/common.js"> </script>
-		<script src="../js/jquery-3.4.1.js"></script>
-		
-		
+		<script src="../js/jquery-3.4.1.js"></script>	
 	</head>
 	<body>
-		
+		  <!--头部-->
+		 <div class='gome-top' id="gome-top">
+			<div id="topbody" class="wbox">
+				<li class="lis">
+					<a class="ashow" href="#">国美会员</a><i class="i1"></i>
+					<div class="hidebox hide">
+						<p><i ></i><span>欢迎来到国美，<a href="html/login.html">请登录!</a></span></p>
+						<h3>
+							<p>我的特权 <a href="#">会员俱乐部</a></p>
+							<span class="sp1"></span>
+							<span class="sp2"></span>
+							<div>
+								<ul>
+									<li><a href="#"><i></i>美豆抽奖</a></li>
+									<li><a href="#"><i></i>退货保障</a></li>
+									<li><a href="#"><i></i>价格保障</a></li>
+									<li><a href="#"><i></i>消费得美豆</a></li>
+									<li><a href="#"><i></i>专属阶梯价</a></li>
+									<li><a href="#"><i></i>生日礼包</a></li>
+									<li><a href="#"><i></i>更多精彩</a></li>
+								</ul>
+							</div>
+						</h3>
+					</div>
+				</li>
+				<span class='log'><a style = "color:red" href="html/login.html">登陆</a></span>
+				<span class="reg"><a href="html/resgister.html">注册有礼</a><i></i></span>
+				<ul class="fr nav">
+					<li class="l1 lis"><a href="#">我的订单</a></li>
+					<li class="l2 lis" ><a href="#">我的国美</a><i class="i1"></i> 						
+						<div class="hidebox hide" style="display:none;">
+							<strong>我的国美，<a rel="#" href="#">请登录！</a></strong>
+                            <ul id="mygome-order">
+                             <li><a  href="#" target="_blank">待处理订单</a></li>
+                             <li><a  href="#" target="_blank">我的收藏</a></li>
+                             <li><a  href="#" target="_blank">个人资料</a></li>
+                             <li><a href="#" target="_blank">我的美店</a></li>
+                           </ul>
+                           <ul id="mygome-coupon">
+	                        <li ><a data-code="public01061" href="#" target="_blank">我的优惠券</a></li>              
+                           </ul>
+                           <p>足迹</p>
+                           <ul id="mygome-track">	                        
+                           </ul>
+                       </div>
+					</li>
+					<li class = "l3 lis">
+						<a href="#">企业采购</a><i class="i1"> </i> 
+						<div class="hidebox hide" >
+                           <a  href="#"></a>
+                        </div>
+					</li>
+					<li class="l4 lis"><a href="#"><i class="i2"></i>服务中心</a><i class="i1"></i>
+						<div class="hidebox3 hide">
+							<p>用户服务</p>
+							<ul>
+	                            <li> <a  href="#" target="_blank" rel="nofollow">售后服务</a> </li>
+								<li> <a  href="#" target="_blank" rel="nofollow">帮助服务</a> </li> 
+								<li> <a href="#" target="_blank" rel="nofollow">新手指南</a> </li>
+								<li> <a  href="#" target="_blank" rel="nofollow">客服服务</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">用户注销</a> </li>
+							</ul>
+							<p> 商家服务 </p>
+							<ul>
+								<li> <a href="#" target="_blank" rel="nofollow">商家入驻</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">商家登录</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">广告平台</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">平台规则</a> </li>
+								<li> <a  href="#" target="_blank" rel="nofollow">商家培训</a> </li>
+							</ul>
+							<a class="service">在线客服</a>			
+						</div>
+					</li>
+					<li class="l5 lis"><a href="#">网站导航</a><i class="i1"></i>
+						<div class="hidebox4 hide">
+							<!--<dl>
+								<dt><a href="#">主题促销</a></dt>
+								<dd>
+									<ul>
+										<li><a href="#">真划算</a></li>
+										<li><a href="#">真划算</a></li>
+										<li><a href="#">真划算</a></li>
+									</ul>							
+								</dd>
+							</dl>--> 
+						</div>
+					</li>
+					<li class="l6 lis"><a href="#"><i class="i3"></i>手机国美</a><i class="i1"></i>
+						<div class="hidebox hide">
+							<a href="#"></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--头部搜索搜索框-->
+		<div class="gome-head  ">
+			<div class="logoA"><a class="logo" href="#"></a>
+		   <a class="imggif" href="#"><img src="../img/hgd.gif"/></a>
+			</div>
+			
+			<div class="searchbox">
+			 	<div class="search">
+			 		<form action="#">
+				 		<div class="searchdown">                   
+	                      <span>商品 <i class="i2"></i></span>                                
+		                    <ul class="search-type-list" ">
+		                      <li class="search-type-item" data-selector="goods">商品</li>
+		                      <li class="search-type-item" data-selector="shop">店铺</li>
+		                      <li class="search-type-item" data-selector="topic">话题</li>
+		                      <li class="search-type-item" data-selector="group">圈子</li>
+		                    </ul>	                  
+	                   </div>               
+	                     <input class="tex" type="text" placeholder="洗衣机"/> 
+	                     <button>搜索</button>
+	                     <b></b>
+			 		</form>		 		
+			 	</div>
+			  <div>
+			   <p class="sertex">
+			   	<a href="#">空调返300</a><a href="#">荣耀超品日</a><a href="#">冰箱减800</a>
+			    <a href="#">游戏本</a><a href="#">彩电返卷</a><a href="#">家电39元</a>
+			    <a href="#">厨房卫浴</a><a href="#">低至五折</a>
+			   </p>
+			  </div>
+			 </div>
+		    <div class="shop">
+		    	<i></i>
+		    	<p><span><a href="#">我的购物车</a></span> <b></b></p>
+		    	<div class="hideshop">
+		    		<h3><a href="#">购物车</a>中没有商品，请继续选购吧！</h3>
+		    	</div>
+		    </div>
+		</div>
+		  <!---->
 		  <div class="phonenav">
 		  	<div class="phnav">
 		  		<span><a href="../indexgome.html">首页</a></span>
@@ -68,7 +201,101 @@
 				</div>
 			</div>-->
 		</div>
+		 <!--底部-->
+      <div class="footbox" id="footbox">
+      	<div class="foot">
+          <ul>
+          	<a href="#">国美集团</a><a href="#">国美管家</a><a href="#">关于国美</a><a href="#">加入我们</a>|         	
+          	<a href="#">品牌大全</a><a href="#">商品专题</a><a href="#">友情链接</a><a href="#">风险监测</a>|
+          	<a href="#">销售联盟</a><a href="#">商家入驻</a><a>广告营销</a>
+          </ul>
+          <p>本公司游戏产品适合18岁以上成年人使用  违法和不良信息举报电话：021-39900132  互联网药品信息服务资格证编号（沪）-经营性-2019-0006</p>
+          <p>网络食品销售第三方平台提供者备案：沪网食备A0015号  网络文化经营许可证沪网文[2017]5537-436号  增值电信业务经营许可证</p>
+          <p>客服电话:4008113333  沪ICP备11009419号/京ICP备 19011786号  京B2-20191290  经营执照  营业执照  出版物经营许可证</p>
+          <p>©2000-2019  国美在线电子商务有限公司版权所有  京公网安备 11010502038379号</p>
+          <div class="foot-ui">
+          	 <a href="#"><i></i><b>经营性网站备案信息</b></a>
+          	 <a href="#"><i></i><b>可信网站信用评价</b></a>
+          	 <a href="#"><i></i><b>诚信网站</b></a>
+          	 <a href="#"><i></i><b>朝阳网络警察</b></a>
+          	 <a href="#"><i></i><b>网购大家评审</b></a>
+          	 <a href="#"><i></i><b>上海互联网不良举报中心</b></a>
+          </div>
+      	</div>
+      </div>
+		<!--侧栏广告-->
+      <div class="asidead">
+      	<ul class="ul1">
+      	<li class='vip'>
+      		<i></i> <b></b> <a class="asideshow" href="#">国美会员 </a>
+      	</li>
+      
+      	<li class="car">
+      		<!--购物车-->
+      	    <a href="../html/car.html">
+      	    <b><span id="carItem">0</span></b> <i class="point"></i> <span>购物车</span>
+      	    </a>
+      	</li> 
+      	<li class="collect"> 
+      	  <i></i> <a class ="asideshow" href="#">我的收藏 </a>
+      	</li>
+      	</ul>
+      	<ul class="ul2">
+      		<li> <!--注册页面-->
+      		<a href="../html/resgister.html"> <i></i> <img class="asideshow adshow" src="../img/asidead.png" /> </a>
+      		</li>
+      		<li> <i></i> </li>
+      		<li> <i></i> </li>
+      		<li> <a href="#gome-top"><i></i></a> </li>
+      	</ul>
+      </div>     		
 		<script type="text/javascript">
+			 //顶部导航数据渲染
+	            function creHeadNav(data){
+	            	var headnav = data;
+	            	//console.log(data);
+	            	var str = "";
+	            	 str = headnav.map((ele,index)=>{
+	            		var str1 = `<dt><a href="#">${ele.title}</a></dt>`;
+	            		var str2 = "";
+	            		 
+	            		str2 = ele.nav.map((item,i)=>{
+	            			var str3 = "";
+	            			str3 = item.map((ele)=>{
+	            			  return `<li><a href="#">${ele}</a></li>`;
+	            			}).join("");
+	            			str3 = `<ul>${str3}</ul>`;
+	            			return str3;
+	            		}).join("");
+	            		str2 = `<dd>${str2}</dd>`; 
+	            		str1 =  `<dl>${str1}${str2}</dl>`; 
+	            		return str1;
+	            	}).join("");
+	            	
+	            	$("#topbody .hidebox4").html(str);
+	            	
+	            }
+	            //获取数据并初始化
+	            $.getJSON("../json/headnav.json", json =>(creHeadNav(json)));
+				//顶部导航
+				//li hover下拉菜单出现
+				let li1 = $("#topbody .lis");				
+			     li1.hover(function(){
+			     	$(this).css("background","white");
+			     	$(this).children("a").css("color","red");
+			     	$(this).children(".hide").css("display","block");			  
+			     },
+			     function(){
+			     	$(this).css("background","none");
+			     	$(this).children("a").css("color","#888");
+			     	$(this).children(".hide").css("display","none");			     	
+			     }
+			     )
+			     $("#topbody .hidebox a").hover(function(){
+			     	 $(this).toggleClass("activeA");			   
+			     })
+			
+			
 			//获取跳转后传送的信息
 			var inf = decodeURI(location.search); 
 		 	inf = inf.slice(1);
@@ -84,39 +311,53 @@
 			 }
 			var data = strToObj(inf);
 		   //商品在数据库中的ID  可根据ID 发送请求数据库
-		   //var git = data.git;
-			 
-		   //发送请求函数
-			
-			//小图列表
-			
-			var imglist = (data.imglist).slice('$$$$');
-		   // console.log(imglist);
+		   var goodgit = data.git;
+		   
+		   //发送请求获取数据		  
+		     function getData(){
+		     	var dataA = [];
+		     	 $.ajax({
+	 	   type:"post",
+	 	   url:"../php/dataDetailGet.php",
+	 	   data: `goodgit=${goodgit}`,
+	 	   dataType:"json",
+	 	   success:function(response){ 
+	 	       data = response[0];
+	 	       dataA.push(data);       
+                }
+ 	 	     })
+		     return data;	 
+           }		 
+		    //获取数据 
+			 var dataA = getData();	
+			//小图列表拼接 
+			var imglist = (dataA.imglist).split("$$$$");
+			var strImg = imglist.map((item)=>{
+				return `<img src="${item}" >`;
+			}).join("");
+		  
 			 //数据渲染
 			 var html = `
 			<div class="left">
             <article class="wrapper">
             <div class="smail">
             <div class="smail_box">
-              <img src="${data.bigimg}">
+              <img src="${dataA.bigimg}" />
                <i class="icon"><img src="../img/mimor.PNG"/></i>
                <div class="make">              	
                 </div>
-               </div>
+            </div>
             <p class="leftimg"><</p>
             <div class="list">
                    <ul>
-                    <img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" alt="">
-                    <img src="https://gfs11.gomein.net.cn/T1WfxQB_Lv1RCvBVdK_60.jpg" alt="">
-                    <img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" alt="">
-                    <img src="https://gfs17.gomein.net.cn/T1LfAgBXD_1RCvBVdK_60.jpg" alt="">
-             
+                    <img src="${dataA.bigimg}" >
+                       ${strImg}           
                   </ul>
             </div>
             <p class="rightimg">></p>
            </div>        
             <div class="big">
-            <img src="${data.bigimg}" alt="">
+            <img src="${dataA.bigimg}" >
            </div>
            </article>
 
@@ -133,7 +374,7 @@
 					</div>
 					<img src="../img/datadetail.jpg" alt="" />
 					<h4> 
-						<p class="price"><label>国美价</label>&yen<span>${(data.price).substring(1,)}</span></p><br>
+						<p class="price"><label>国美价</label>&yen<span>${(dataA.price).slice(1,)}</span></p><br>
 						<p><label>领劵</label><i>满500-100</i><i>满2999-300</i></p> 
 					</h4>
 					<h5><span>配送至</span><p>广东省广州市<i>></i></p></h5>
@@ -145,13 +386,17 @@
 						<li><em class="add">+</em><span>1</span><em class="sub">-</em></li>
 					</h5>
 				
-					<button data-index =${data.git} class='submit'><i></i>加入购物车</button>
+					<button data-index =${dataA.git} class='submit'><i></i>加入购物车</button>
 				</div>
 			</div>		
 			`;
+			 $(".detail").append(html);
+			 
+			 
+			
 			
 			//小图片选项卡
-			$(".detail").append(html);
+			
 			$(".list").on('mouseenter',"img",function(){
 				let index = $(this.index);
 				$(".smail_box ").children("img").attr("src", this.src);
@@ -160,15 +405,14 @@
 			// 商品详情选项
 			$(".right h5").on("click",'p',function(){
 				   //console.log(this);
-				  $(this).addClass("pactive").siblings().removeClass("pactive");
+			 $(this).addClass("pactive").siblings().removeClass("pactive");
 			})
 			
 			//点击数量增减
 			$(".count .add").click(function(){
 				var num =  $(this).next().html();
 				  num ++;
-				 $(this).next().html(num);
-				 //console.log($(this).next().html());
+				 $(this).next().html(num); 
 			})
 			
 			$(".count .sub").click(function(){
@@ -179,15 +423,27 @@
 				  }
 				 $(this).prev().html(num);
 			})
-			
-			  	   
-			   var goodlist = Cookie.get('goodlist') || [];	
-			     console.log(goodlist,"转换前");
-			      if(goodlist.length != 0){
-			   	    goodlist = JSON.parse(goodlist);
-			   	  console.log("转换json",goodlist,goodlist[0].git,"goodlist.git",goodlist.length,"长度",data.git,"下一个git");
+						  	   
+			  var goodlist = Cookie.get('goodlist');
+			  if(goodlist.length != 0){
+			  	 goodlist = JSON.parse(goodlist);
 			  }
-				
+			  else{
+			  	goodlist = [];
+			  }		
+			    
+			  	var itemNum = Cookie.get("goodnum");
+			   //改变侧栏购物车商品数
+			    $("#carItem").text(itemNum);
+			
+			   
+			   $("#carItem").mouseenter(function(){
+			   	    $(this).css("color","red");
+			   })
+			  $("#carItem").mouseenter(function(){
+			   	    $(this).css("color","white")
+			   })
+			  
 			//点击加入购物车存入cookie数据库
 			$(".detail").on("click" ,".submit",function(){	
 				 //先判断cookie中是否存在商品		 
@@ -195,8 +451,7 @@
 				 let git  = data.git;
 				 console.log(git,"当前商品git");
 				//判断该商品是否已加入过购物车
-				 let curgood = goodlist.filter(function(g){
-				 	console.log(g.git,"g.git");
+				 let curgood = goodlist.filter(function(g){ 
 				 	   return g.git == git;
 				 })
 				 if(curgood.length > 0){
@@ -209,30 +464,25 @@
 				 var o ={};
 				 var detail = $(this).parents(".detail");
 				  o.git = git;
-				  o.img = detail.find(".smail_box img").attr("src");
+				  o.count = detail.find(".count li span").text();
+				  o.check = 1; //选中状态
 				  o.price = detail.find(".price span").text();
+				  o.img = detail.find(".smail_box img").attr("src"); 
 				  o.title = detail.find(".title h3").text();
 				  o.color = detail.find(".color .pactive").text();
 				  o.vis =   detail.find(".vis .pactive").text();
-				  o.types = detail.find(".types .pactive").text();
-				  o.count = detail.find(".count li span").text();				  
+				  o.types = detail.find(".types .pactive").text();				 
 				 // console.log(o.price,o.color,o.vis,o.type,o.count);
                    goodlist.push(o); 
-				   console.log(goodlist,"add-o");
 				 }
-				   console.log(goodlist,"last")
-				   console.log(goodlist.length,"新goodlist长度");
-				 //存入cookie
-				 Cookie.set("goodlist",JSON.stringify(goodlist));
-				 
-              })
-			
-			
-				 	
-	     
-				
-			
+				 itemNum = goodlist.length;
+                 //存入cookie
+                 $("#carItem").text(itemNum);
+				 Cookie.set("goodlist",JSON.stringify(goodlist),{path:"/project/"});
+				 Cookie.set("goodnum",goodlist.length,{path:"/project/"});
+                })			
 		</script>
+		
 		<script src="../js/mimor.js"></script>
 	</body>
 </html>

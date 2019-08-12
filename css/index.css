@@ -53,6 +53,12 @@ i{font-style:normal;}
 	top: 12px;
 	right:8px;	
 }
+#topbody .hide .activeA{
+	color:red;
+}
+#topbody .hide a:hover{
+	color:red;
+}
 #topbody>li .hidebox{
 	position:absolute;
 	top:30px;
@@ -251,7 +257,8 @@ i{font-style:normal;}
 }
 #topbody .nav .l4 .hidebox3{
 	width: 242px;
-	height: 215px;  
+	height: 215px; 
+	padding-left:20px; 
 	position: absolute;
     top: 30px;   
     background: #fff;
@@ -323,8 +330,9 @@ i{font-style:normal;}
 }
 /*第五个下拉*/
 #topbody .nav .l6 .hidebox{
-	width: 130px;
-	height: 170px;
+	width: 180px;
+	height: 200px;
+	padding:20px 0 0 20px;
 	position:absolute;
 	top:30px;
 	right:0;
@@ -599,7 +607,7 @@ i{font-style:normal;}
     z-index:10;
 }
 
-.cateleft .navbox li{
+.cateleft .navbox>li{
 	height: 29px;
 	margin-top:1px;
 	line-height:29px;
@@ -610,7 +618,7 @@ i{font-style:normal;}
     overflow: hidden;
     margin-left: 1px;
 }
-.cateleft .navbox li a{
+.cateleft .navbox>li>a{
 	color: #fff;
     font-size: 14px;
     font-family: 'Microsoft YaHei',arial;
@@ -626,7 +634,7 @@ i{font-style:normal;}
     border-left: none;
     position: absolute;
     top: 40px;
-    left: 199px;
+    left: 198px;
     z-index: 99;
     width: 1000px; 
     background:#efefef; 
@@ -692,7 +700,8 @@ i{font-style:normal;}
 }
  .hidenav .lnav .contex h3 p{
 	width: 700px;
-	height: 30px;
+	min-height: 30px;
+	max-height:70px;
     float:left;
     border-bottom:1px solid #efefef;
     position:relative;
@@ -753,9 +762,12 @@ i{font-style:normal;}
     vertical-align: middle;
 }
 /*移入事件*/
-.cateleft .navbox .liact{
+.catelnav .navbox .liact{
 	background:white;
 	color: black;
+}
+.catelnav .navbox li .Aact{
+	color:black;
 }
 .cateleft .subact{
 	display:block;
@@ -1056,12 +1068,16 @@ height: 421px;
 }
 .yl_box{
 	width: 1200px;
-	height: 362px;
+	height: 328px;
 	margin:0 auto;
+	margin-bottom:35px;
+	overflow:hidden;
+	position:relative;
 }
 .yl_title{
 	width: 1220px;
 	height: 60px;
+	position:relative;
 }
 .yl_box h2{
 	font-size: 18px;
@@ -1071,6 +1087,27 @@ height: 421px;
     float: left;
     width: 72px;
 }
+.yl_box .yl_title i{
+	font-style:normal;
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	border:1px solid #666;
+	border-radius:20px;
+	position:absolute;
+	line-height: 20px;
+	text-align:center;
+	top:30px;
+	right:30px;
+	color:#666;
+}
+.yl_box .yl_title i:hover{
+	border:1px solid red;
+	color:red;
+}
+.yl_box .yl_title .ylprev{
+	right:60px;
+}
 .yl_box span{
 	display: block;
     float: left;
@@ -1079,14 +1116,22 @@ height: 421px;
     padding: 30px 0 0 9px;
     font-family: Arial;
 }
+.yl_box .yl_ulbox{
+	height: 265px;
+	width: 10000px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
 .yl_box ul{
 	width: 1220px;
 	height: 264px;
+	float:left;
 	border:1px solid #efefef;
 }
 .yl_box ul li{	
 	width: 200px;
-    height: 224px;
+    height: 226px;
     margin-top: 20px;
     float: left;
 }
@@ -1096,7 +1141,7 @@ height: 421px;
 .yl_box ul li a{
 	display: block;
     width: 199px;
-    height: 210px;
+    height: 2px;
     border-right: 1px dashed #eee;
     padding-top: 15px;
 }
@@ -1118,7 +1163,8 @@ height: 421px;
 }
 .yl_box ul li a h3{
 	font-size:16px;
-	padding-left:10px;
+	margin-top:10px;
+	padding-left:20px;
 	color:red;
 }
 .yl_box ul li a:hover{
@@ -1314,7 +1360,8 @@ font-size:20px;
 .temp>ul>li  , .temp4>ul>li{
 	float:left;
 }
-.temp>ul>li>span ,.temp4>ul>li{
+
+.temp>ul>li>span ,.temp4>ul>li>span{
 	font-size: 14px;
     color: #5e5e5e;
     padding: 0 15px;
@@ -1322,17 +1369,32 @@ font-size:20px;
     line-height: 30px;
     display: inline-block;
 }
+
 /*每个楼层hover颜色*/
 .temp  ul li :hover{
 	background: rgb(113, 158, 247);
 	color:white;
 }
-.subtemp{
-	width: 1220px;
-	height: 470px;
-	position:relative;
+.computer  ul li :hover{
+	background:#50bfec;
+	color:white;
 }
-
+.home  ul li :hover{
+	background: #7f86ec;
+}
+.kitchen  ul li :hover{
+	background: #2cc7b0;
+}
+.market  ul li :hover{
+	background: #e85cc5;
+}
+.household  ul li :hover{
+   background: #abce5b;
+}
+.cartool  ul li :hover{
+	background: #829daa;
+}
+/*楼层背景*/
 .temp .subtemp .subleft{
 	width: 220px;
 	height: 470px;
@@ -1345,6 +1407,30 @@ font-size:20px;
 	float:left;
 	background: #41ccb8;
 }
+.computer .subtemp .subleft{
+	background:#50bfec;
+}
+.home .subtemp .subleft{
+	background: #7f86ec;
+}
+.market .subtemp .subleft{
+	background: #e85cc5;
+}
+.kitchen .subtemp .subleft{
+	background: #2cc7b0;
+}
+.household .subtemp .subleft{
+	background: #abce5b;
+}
+.cartool .subtemp .subleft{
+	background: #829daa;
+}
+.subtemp{
+	width: 1220px;
+	height: 470px;
+	position:relative;
+}
+
 
 .temp .subtemp .subleft>a img{
     display: block;
@@ -1421,8 +1507,7 @@ font-size:20px;
     font-size: 12px;
 }
 .subtemp .subleft .keyword ul li:hover a{
-	text-decoration: underline;
-	
+	text-decoration: underline;	
 }
 .subright{
 	display:none;
@@ -1440,9 +1525,41 @@ font-size:20px;
     float: left;
     overflow:hidden;
 }
+/*隐藏的里 1 3 5 7 楼*/
+.lou .subright .tempad .hideli img{ 
+	display: block;
+    width: 130px;
+    height: 130px;
+    margin: 20px 0 15px 34px;
+}
+.lou .subright .tempad .hideli p{
+	height: 38px;
+    margin-left: 20px;
+    overflow: hidden;
+    line-height: 18px;
+    font-size: 12px;
+}
+.lou .subright .tempad .hideli span{
+	display:block;
+	font-size:16px;
+	padding-left:20px;
+}
+/*4楼6楼隐藏的li*/
+.temp4 .subtemp .hideli{
+	width: 214px;
+}
+.temp4 .subtemp .subright .tempad li{
+	width: 198px;
+    height: 235px;
+    float: left;
+    overflow:hidden;
+}
+.temp4 .subtemp .subright .tempad .hideli{
+	width: 215px;
+}
 .subtemp .subright .tempad li a{
 	display: block;
-    width: 196px;
+    width: 100%;
     height: 235px;
     overflow:hidden;
     border-right: 1px solid #eee;
@@ -2166,4 +2283,8 @@ font-size:20px;
 }
 .asidead .asideshow{
 	display:none;	
+}
+/*购物车移入事件*/
+.asidead .car>span{
+	background:red;
 }

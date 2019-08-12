@@ -1,3 +1,49 @@
+//顶部导航数据渲染
+	            function creHeadNav(data){
+	            	var headnav = data;
+	            	//console.log(data);
+	            	var str = "";
+	            	 str = headnav.map((ele,index)=>{
+	            		var str1 = `<dt><a href="#">${ele.title}</a></dt>`;
+	            		var str2 = "";
+	            		 
+	            		str2 = ele.nav.map((item,i)=>{
+	            			var str3 = "";
+	            			str3 = item.map((ele)=>{
+	            			  return `<li><a href="#">${ele}</a></li>`;
+	            			}).join("");
+	            			str3 = `<ul>${str3}</ul>`;
+	            			return str3;
+	            		}).join("");
+	            		str2 = `<dd>${str2}</dd>`; 
+	            		str1 =  `<dl>${str1}${str2}</dl>`; 
+	            		return str1;
+	            	}).join("");
+	            	
+	            	$("#topbody .hidebox4").html(str);
+	            	
+	            }
+	            //获取数据并初始化
+	            $.getJSON("../json/headnav.json", json =>(creHeadNav(json)));
+				//顶部导航
+				//li hover下拉菜单出现
+				let li1 = $("#topbody .lis");				
+			     li1.hover(function(){
+			     	$(this).css("background","white");
+			     	$(this).children("a").css("color","red");
+			     	$(this).children(".hide").css("display","block");			  
+			     },
+			     function(){
+			     	$(this).css("background","none");
+			     	$(this).children("a").css("color","#888");
+			     	$(this).children(".hide").css("display","none");			     	
+			     }
+			     )
+			     $("#topbody .hidebox a").hover(function(){
+			     	 $(this).toggleClass("activeA");			   
+			     })
+			     
+
 //tag数据渲染
 
     function tagHtml(data){
@@ -18,10 +64,7 @@
   }
      //调用tag渲染
     tagHtml(datatag);
-    
-  
-      
-
+   
     
     //数据请求
      /* 请求页码生成页码标签 */
@@ -55,14 +98,19 @@
             dataType: "json",
             
             success: function(response) {
+                 // console.log(response,"000");
+                 var num = 0;
+                    // console.log(response[18].imglist);
                 var res = response.map((ele,index) => {
-                    //console.log(ele.price);
-                    // console.log(ele.imglist);
+ 
                      //小图拼接
-                     var minimgs = JSON.parse(ele.imglist);                                    
-                    var strimg = minimgs.map((item)=>{
-                    	//console.log(item);
-                     	return `<img src="${item}"  />`;
+                     // console.log(ele, num++ );
+                     var minimgs = JSON.parse(ele.imglist) || []; 
+                       //console.log(minimgs,++num);
+                   var strimg = minimgs.map((item)=>{
+                    	
+                     	return `<img src="${item}"/>`;
+                     	 console.log(item);
                      }).join(""); 
                      
                     return `
@@ -84,6 +132,7 @@
             }
         });     
     }
+    
    //初始化
    var orderType = ["default", "low", "hight"];
    var type = "default";
@@ -122,7 +171,6 @@
                }
        
 			 		$(".gooditems ").on("click",".item",function(){
-			 			console.log(this);
 			 			 event.preventDefault();
 			              var o ={};
 			             o.git = $(this).data("git");
@@ -136,12 +184,11 @@
 			 		      });
 			 		    o.imglist =  (strimg).substring(0,strimg.length-4);
 			 		    //console.log(o.imglist);
-			 			let str = self.objToStr(o);	
-			 			//console.log(o,str);
-			 						 			
-			 			//console.log(str);
-			 			location.href = '../html/商品详情页.html?' + str;
+			 			let str = self.objToStr(o);				 			
+			 			location.href = `../html/商品详情页.html?` + str;
 			 		})
+			
+			//侧边栏购物车数量
 			
 			
         

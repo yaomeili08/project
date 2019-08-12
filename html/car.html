@@ -3,11 +3,108 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>购物车页面</title>
+		<link rel="stylesheet" href="../css/index.css" />
 		<link rel="stylesheet" href="../css/car.css" />
 		<script src="../js/jquery-3.4.1.js"></script>
 		<script src="../js/common.js"></script>
 	</head>
 	<body>
+		<div class='gome-top' id="gome-top">
+			<div id="topbody" class="wbox">
+				<li class="lis">
+					<a class="ashow" href="../indexgome.html">国美首页</a><i class="i1"></i>
+					<div class="hidebox hide">
+						<p><i ></i><span>欢迎来到国美，<a href="../html/login.html">请登录!</a></span></p>
+						<h3>
+							<p>我的特权 <a href="#">会员俱乐部</a></p>
+							<span class="sp1"></span>
+							<span class="sp2"></span>
+							<div>
+								<ul>
+									<li><a href="#"><i></i>美豆抽奖</a></li>
+									<li><a href="#"><i></i>退货保障</a></li>
+									<li><a href="#"><i></i>价格保障</a></li>
+									<li><a href="#"><i></i>消费得美豆</a></li>
+									<li><a href="#"><i></i>专属阶梯价</a></li>
+									<li><a href="#"><i></i>生日礼包</a></li>
+									<li><a href="#"><i></i>更多精彩</a></li>
+								</ul>
+							</div>
+						</h3>
+					</div>
+				</li>
+				<span class='log'><a style = "color:red" href="../html/login.html">登陆</a></span>
+				<span class="reg"><a href="../html/resgister.html">注册有礼</a><i></i></span>
+				<ul class="fr nav">
+					<li class="l1 lis"><a href="#">我的订单</a></li>
+					<li class="l2 lis" ><a href="#">我的国美</a><i class="i1"></i> 						
+						<div class="hidebox hide" style="display:none;">
+							<strong>我的国美，<a rel="#" href="#">请登录！</a></strong>
+                            <ul id="mygome-order">
+                             <li><a  href="#" target="_blank">待处理订单</a></li>
+                             <li><a  href="#" target="_blank">我的收藏</a></li>
+                             <li><a  href="#" target="_blank">个人资料</a></li>
+                             <li><a href="#" target="_blank">我的美店</a></li>
+                           </ul>
+                           <ul id="mygome-coupon">
+	                        <li ><a data-code="public01061" href="#" target="_blank">我的优惠券</a></li>              
+                           </ul>
+                           <p>足迹</p>
+                           <ul id="mygome-track">	                        
+                           </ul>
+                       </div>
+					</li>
+					<li class = "l3 lis">
+						<a href="#">企业采购</a><i class="i1"> </i> 
+						<div class="hidebox hide" >
+                           <a  href="#"></a>
+                        </div>
+					</li>
+					<li class="l4 lis"><a href="#"><i class="i2"></i>服务中心</a><i class="i1"></i>
+						<div class="hidebox3 hide">
+							<p>用户服务</p>
+							<ul>
+	                            <li> <a  href="#" target="_blank" rel="nofollow">售后服务</a> </li>
+								<li> <a  href="#" target="_blank" rel="nofollow">帮助服务</a> </li> 
+								<li> <a href="#" target="_blank" rel="nofollow">新手指南</a> </li>
+								<li> <a  href="#" target="_blank" rel="nofollow">客服服务</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">用户注销</a> </li>
+							</ul>
+							<p> 商家服务 </p>
+							<ul>
+								<li> <a href="#" target="_blank" rel="nofollow">商家入驻</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">商家登录</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">广告平台</a> </li>
+								<li> <a href="#" target="_blank" rel="nofollow">平台规则</a> </li>
+								<li> <a  href="#" target="_blank" rel="nofollow">商家培训</a> </li>
+							</ul>
+							<a class="service">在线客服</a>			
+						</div>
+					</li>
+					<li class="l5 lis"><a href="#">网站导航</a><i class="i1"></i>
+						<div class="hidebox4 hide">
+							<!--<dl>
+								<dt><a href="#">主题促销</a></dt>
+								<dd>
+									<ul>
+										<li><a href="#">真划算</a></li>
+										<li><a href="#">真划算</a></li>
+										<li><a href="#">真划算</a></li>
+									</ul>							
+								</dd>
+							</dl>-->
+							
+						</div>
+					</li>
+					<li class="l6 lis"><a href="#"><i class="i3"></i>手机国美</a><i class="i1"></i>
+						<div class="hidebox hide">
+							<a href="#"></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--购物车页面-->
 		<div class="carhead">
 			<a href="../indexgome.html"></a>
 			<h2>购物车</h2>
@@ -24,7 +121,7 @@
 			<div class="carContain">
 				<h2>国美自营</h2>
 				<!--<div class="item">
-					<input type="checkbox" />
+					<input type="checkbox" class="check"/>
 					<a href="#"><img src="http://gfs17.gomein.net.cn/T1yBKsB5bv1RCvBVdK_80.jpg" alt="" /></a>
 					<p class="title">荣耀 (honor) 荣耀畅玩8 2GB+32GB 全网通版 极光蓝<br>
 						<i></i>&nbsp;&nbsp;<i></i>
@@ -40,14 +137,36 @@
 		</div>
 		<div class="carBtm">
 			<div class="carBtmNav">
-			  <input class="choose" type="checkbox" /><span>全选</span>
-			  <span class="delAll">删除</span>
+			 <!-- <input class="choose" type="checkbox" /><span>全选</span>-->
+			  <span class="delAll">清空购物车</span>
 			  <h3 >已选择<b class="addCount">0</b>件商品</h3>
 			  <p class="total">总计&yen;<b class="tolPrice">&yen;0.000</b></p>
 			  <p class="buy">结算</p>
-			</div>
-			
+			</div>			
 		</div>
+		
+		 <!--底部-->
+      <div class="footbox" id="footbox">
+      	<div class="foot">
+          <ul>
+          	<a href="#">国美集团</a><a href="#">国美管家</a><a href="#">关于国美</a><a href="#">加入我们</a>|         	
+          	<a href="#">品牌大全</a><a href="#">商品专题</a><a href="#">友情链接</a><a href="#">风险监测</a>|
+          	<a href="#">销售联盟</a><a href="#">商家入驻</a><a>广告营销</a>
+          </ul>
+          <p>本公司游戏产品适合18岁以上成年人使用  违法和不良信息举报电话：021-39900132  互联网药品信息服务资格证编号（沪）-经营性-2019-0006</p>
+          <p>网络食品销售第三方平台提供者备案：沪网食备A0015号  网络文化经营许可证沪网文[2017]5537-436号  增值电信业务经营许可证</p>
+          <p>客服电话:4008113333  沪ICP备11009419号/京ICP备 19011786号  京B2-20191290  经营执照  营业执照  出版物经营许可证</p>
+          <p>©2000-2019  国美在线电子商务有限公司版权所有  京公网安备 11010502038379号</p>
+          <div class="foot-ui">
+          	 <a href="#"><i></i><b>经营性网站备案信息</b></a>
+          	 <a href="#"><i></i><b>可信网站信用评价</b></a>
+          	 <a href="#"><i></i><b>诚信网站</b></a>
+          	 <a href="#"><i></i><b>朝阳网络警察</b></a>
+          	 <a href="#"><i></i><b>网购大家评审</b></a>
+          	 <a href="#"><i></i><b>上海互联网不良举报中心</b></a>
+          </div>
+      	</div>
+      </div>
 		<script src="../js/car.js"></script>
 	</body>
 </html>

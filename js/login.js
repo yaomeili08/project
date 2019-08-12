@@ -1,7 +1,8 @@
 $(function(){
 	   
 	   	 //发送请求封装
-	   function sendLogin(str){	 
+	   function sendLogin(str){
+	   	 
 	 	 $.ajax({
 	 	   type:"post",
 	 	   url:"../php/login.php",
@@ -9,13 +10,16 @@ $(function(){
 	 	   dataType:"json",
 	 	   success:function(response){ 
 	 	     if(response.status == "success"){
-	 	     	  console.log(response.msg,"00");
+	 	     	  //console.log(response.msg,"00");
             		alert(response.msg); 
-            	   window.location.href = "../indexgome.html";
+            		 var user = Cookie.getItem("username");
+            	   window.location.href = `../indexgome.html?usename=${user}`;
                }else{ 
+               	    
             		alert(response.msg);
-            		//清空当前页面cookie数据
-            		 Cookie.clear();
+            		//清空存取的cookie
+            		removeItem("username");
+            		removeItem("password");
             	 }
  	 	     }
           })
@@ -29,7 +33,7 @@ $(function(){
 	 if(tex1 && tex2){	 	    
 	 	 let userName = Cookie.getItem("username");
 	 	 let  pass  = Cookie.getItem("password"); 
-	 	console.log(userName,pass);
+	 	//console.log(userName,pass);
 	 	  queryAuto = `username=${userName}&password=${pass}`;
 	 	  sendLogin(queryAuto); 
 	   }
@@ -49,11 +53,12 @@ $(function(){
 	 	else{ 
 	 	  //判断自动登陆按钮是否选中 将用户名及密码存入cookie
 	 	  if(auto){
-	 	 	  Cookie.setItem("username",user,7);
-	 	 	  Cookie.setItem("password",psw,7); 	 	   
+	 	 	  Cookie.setItem("username",user,7,"/project/");
+	 	 	  Cookie.setItem("password",psw,7,"/project/"); 	 	   
 	 	  }
 	 	 queryAuto = `username=${user}&password=${psw}`;
 	 	 	//发送请求
+	 	
 	 	  sendLogin(queryAuto);	
 	 	 
 	 	 

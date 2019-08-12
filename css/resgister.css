@@ -15,7 +15,7 @@ ul li{list-style:none;}
     background: #fff;
     font-family: 'Microsoft Yahei';
     overflow:hidden;
-    display:none;
+    /*display:none;*/
 }
 #read h2{
 	margin:0 auto;

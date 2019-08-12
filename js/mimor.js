@@ -1,5 +1,6 @@
  (function () {
         // 小框外层盒子
+        var oWrap = document.querySelector('.wrapper');
         var smail = document.querySelector('.smail');
         // 小图片框节点
         var smailBox = document.querySelector(".smail_box");       
@@ -32,9 +33,26 @@
             bigBox.style.display = 'block';
             // 显示小黄标
             make.style.display = 'block';
-            let x = e.clientX - smail.offsetLeft - make.offsetWidth - 90;
-            let y = e.clientY - smail.offsetTop  - make.offsetHeight / 2;
-           // console.log(e.clientX,e.clientY);
+            
+//           var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//           var iScrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+//           var x = e.clientX + iScrollLeft - make.offsetWidth / 2 - smailBox.offsetLeft;
+//           var y = e.clientY + iScrollTop - make.offsetHeight / 2 - smailBox.offsetTop;
+//            if (x < 0) {
+//                x = 0;
+//            } else if (x > smailBox.offsetWidth - make.offsetWidth) {
+//              x = smailBox.offsetWidth - make.offsetWidth;
+//             };
+//           if (y < 0) {
+//               y = 0;
+//           } else if (y > smailBox.offsetHeight - make.offsetHeight) {
+//              y = smailBox.offsetHeight - make.offsetHeight;
+//             };
+
+
+            let x = e.clientX - smail.offsetLeft - make.offsetWidth -90;
+            let y = e.clientY - smail.offsetTop  - make.offsetHeight - 30;
+              console.log(e.clientX,e.clientY);
             x <= 0 ? x = 0 : x;
             x >= smailBox.offsetWidth - make.offsetWidth ? x = smailBox.offsetWidth - make.offsetWidth : x;
             y <= 0 ? y = 0 : y;
@@ -54,6 +72,7 @@
             bigBox.style.display = 'none';
             make.style.display = 'none';
         }
+
 
         function bian(e) {
             // ul可移动最大距离

@@ -3,6 +3,26 @@ ul li{
 	list-style:none;
 }
 a{text-decoration:none;}
+body{
+	height: 100%;
+}
+.gome-top .nav{
+	float:right;
+}
+.gome-head{
+position:relative;
+height: 120px;
+}
+.gome-head .logoA{
+	height: 120px;
+	top: 300px;
+	float:left;
+	position:absolute;
+	top:0;left:0;
+}
+.gome-head .logoA .imggif{
+	margin-left:20px;
+}
 .datahot{
 	width: 1200px;
 	height: 140px;
@@ -144,19 +164,23 @@ a{text-decoration:none;}
 	text-align:center;
 	line-height:20px;
 }
+.minbox{
+	width: 100%;
+}
 .datamain{
 	width: 1200px;
+	min-height:800px;
 	margin:0 auto;
 }
-.datamain .mainleft{
+/*.datamain .mainleft{
 	float: left;
     margin-left: -208px;
     width: 198px;
     overflow: hidden;	
-}
+}*/
 .datamain .mainright{
 	float:right;
-	width: 992px;
+	width: 1150px;
 }
 .filter{
 	padding: 6px 10px;
@@ -200,6 +224,7 @@ a{text-decoration:none;}
 .gooditems .item{
 	float:left;
 	margin-top:10px;
+	margin:10px;
 	list-style:none;
 	color:#888;
 	width: 248px;
@@ -343,3 +368,5 @@ a{text-decoration:none;}
 #page .spanact{
 	  background:#555;
 }
+
+
