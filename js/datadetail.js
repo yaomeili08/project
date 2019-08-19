@@ -1,5 +1,51 @@
 $(function(){
-		//获取跳转后传送的信息
+		//顶部导航数据渲染
+	            function creHeadNav(data){
+	            	var headnav = data;
+	            	//console.log(data);
+	            	var str = "";
+	            	 str = headnav.map((ele,index)=>{
+	            		var str1 = `<dt><a href="#">${ele.title}</a></dt>`;
+	            		var str2 = "";
+	            		 
+	            		str2 = ele.nav.map((item,i)=>{
+	            			var str3 = "";
+	            			str3 = item.map((ele)=>{
+	            			  return `<li><a href="#">${ele}</a></li>`;
+	            			}).join("");
+	            			str3 = `<ul>${str3}</ul>`;
+	            			return str3;
+	            		}).join("");
+	            		str2 = `<dd>${str2}</dd>`; 
+	            		str1 =  `<dl>${str1}${str2}</dl>`; 
+	            		return str1;
+	            	}).join("");
+	            	
+	            	$("#topbody .hidebox4").html(str);
+	            	
+	            }
+	            //获取数据并初始化
+	            $.getJSON("../json/headnav.json", json =>(creHeadNav(json)));
+				//顶部导航
+				//li hover下拉菜单出现
+				let li1 = $("#topbody .lis");				
+			     li1.hover(function(){
+			     	$(this).css("background","white");
+			     	$(this).children("a").css("color","red");
+			     	$(this).children(".hide").css("display","block");			  
+			     },
+			     function(){
+			     	$(this).css("background","none");
+			     	$(this).children("a").css("color","#888");
+			     	$(this).children(".hide").css("display","none");			     	
+			     }
+			     )
+			     $("#topbody .hidebox a").hover(function(){
+			     	 $(this).toggleClass("activeA");			   
+			     })
+			
+			
+			//获取跳转后传送的信息
 			var inf = decodeURI(location.search); 
 		 	inf = inf.slice(1);
 		 	 // 字符串转对象函数
@@ -16,50 +62,52 @@ $(function(){
 		   //商品在数据库中的ID  可根据ID 发送请求数据库
 		   var goodgit = data.git;
 		   
-			
-		  //发送请求获取数据		  
-		     function getData(){		     	
+		   //发送请求获取数据		  
+		    
 		     	 $.ajax({
 	 	   type:"post",
 	 	   url:"../php/dataDetailGet.php",
 	 	   data: `goodgit=${goodgit}`,
 	 	   dataType:"json",
 	 	   success:function(response){ 
-	 	       data = response[0];
-	 	       console.log(data);
-	 	       creatHtml(data);
-                }
- 	 	     })		    
-           }
-		  getData(); 
-  function creatHtml(data){
-  	    var dataA = data;
-  	    var imglist = JSON.parse(dataA.imglist);
+	 	       dataA = response[0];
+	 	         createHtml(dataA);
+	 	        }
+ 	 	     })
+		    
+          	
+           //渲染标签并产生事件
+           function createHtml(data){
+		    //获取数据 
+			 var dataA = data;	
+			//小图列表拼接 
+			var imglist = JSON.parse(dataA.imglist);
 			var strImg = imglist.map((item)=>{
 				return `<img src="${item}" >`;
 			}).join("");
+		  
 			 //数据渲染
 			 var html = `
 			<div class="left">
             <article class="wrapper">
-            <div class="smail">
-            <div class="smail_box">
-              <img src="${dataA.bigimg}">
-               <i class="icon"><img src="../img/mimor.PNG"/></i>
-               <div class="make">              	
+             <div class="smail">
+               <div class="smail_box">
+                <img src="${dataA.bigimg}" />
+                <i class="icon"><img src="../img/mimor.PNG"/></i>
+                <div class="make">              	
                 </div>
-               </div>
-            <p class="leftimg"><</p>
-            <div class="list">
+              </div>
+             <p class="leftimg"><</p>
+             <div class="list">
                    <ul>
                     <img src="${dataA.bigimg}" >
                        ${strImg}           
                   </ul>
-            </div>
+             </div>
             <p class="rightimg">></p>
            </div>        
             <div class="big">
-            <img src="${dataA.bigimg}" alt="">
+            <img src="${dataA.bigimg}" >
            </div>
            </article>
 
@@ -93,8 +141,11 @@ $(function(){
 			</div>		
 			`;
 			 $(".detail").append(html);
-			 
-			 //小图片选项卡
+			 //放大镜
+			  minor();
+			
+			
+			//小图片选项卡
 			
 			$(".list").on('mouseenter',"img",function(){
 				let index = $(this.index);
@@ -179,8 +230,7 @@ $(function(){
                  $("#carItem").text(itemNum);
 				 Cookie.set("goodlist",JSON.stringify(goodlist),{path:"/project/"});
 				 Cookie.set("goodnum",goodlist.length,{path:"/project/"});
-                })			
-			 
-     }
+                })	
+      }
      
   })

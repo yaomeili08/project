@@ -3,10 +3,8 @@ ul li{
 	list-style:none;
 }
 a{text-decoration:none;}
-body{
-	height: 100%;
-}
-.gome-top .nav{
+
+#gome-top .nav{
 	float:right;
 }
 .gome-head{

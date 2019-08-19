@@ -50,8 +50,8 @@
 //             };
 
 
-            let x = e.clientX - smail.offsetLeft - make.offsetWidth -90;
-            let y = e.clientY - smail.offsetTop  - make.offsetHeight - 30;
+            let x = e.clientX - smailBox.offsetLeft - make.offsetWidth -90;
+            let y = e.clientY - smailBox.offsetTop  - make.offsetHeight - 30;
               console.log(e.clientX,e.clientY);
             x <= 0 ? x = 0 : x;
             x >= smailBox.offsetWidth - make.offsetWidth ? x = smailBox.offsetWidth - make.offsetWidth : x;

@@ -96,6 +96,8 @@
 
         }
         .big>img {
+        	 position:absolute;
+        	 top:0;left:0;
             display: block;
             width: 1080px;
             height: 1080px;

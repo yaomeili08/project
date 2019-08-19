@@ -242,7 +242,7 @@ $(function(){
 		     		 this.index ++;
 		     		if(this.index >= this.length){
 		     			this.index = 0;}
-		     		this.lis.eq(this.index).fadeIn().siblings().fadeOut();
+		     		this.lis.eq(this.index).stop().fadeIn().siblings().stop().fadeOut();
 		     		this.lis.css("background",libg[this.index]);
 		     		this.i.eq(this.index).addClass("bani").siblings().removeClass('bani');
 		     		
@@ -251,7 +251,7 @@ $(function(){
 		     		this.index --;
 		     		if(this.index < 0 ){
 		     		this.index = this.length;}
-		     		this.lis.eq(this.index).fadeIn().siblings().fadeOut();
+		     		this.lis.eq(this.index).stop().fadeIn().siblings().stop().fadeOut();
 		     		this.lis.css("background",libg[this.index]);
 		     		this.i.eq(this.index).addClass("bani").siblings().removeClass('bani');		    		
 		     	}
@@ -278,7 +278,7 @@ $(function(){
 		     	    this.i.hover(function(){
 		     	    	let index = $(this).index();
 		     	    	$(this).addClass("bani").siblings().removeClass('bani');
-		     	    	 self.lis.eq(index).stop().fadeIn().siblings().fadeOut();
+		     	    	 self.lis.eq(index).stop().fadeIn().siblings().stop().fadeOut();
 		     	    	 self.lis.css("background",libg[index]);
 		     	    	 self.index = index;
 		     	    })
@@ -373,7 +373,7 @@ $(function(){
 		        		if(index >= length){
 		        			index = 0;
 		        		} 
-		        	    lis.eq(index).stop().fadeIn().siblings().fadeOut();
+		        	    lis.eq(index).stop().fadeIn().siblings().stop().fadeOut();
 		        	    is.eq(index).addClass("acti").siblings().removeClass("acti");
 		        	      return index;
 		        	}
@@ -382,7 +382,7 @@ $(function(){
 		        		if(index < 0){
 		        			index = index = length;
 		        		}
-		        		lis.eq(index).stop().fadeIn().siblings().fadeOut();
+		        		lis.eq(index).stop().fadeIn().siblings().stop().fadeOut();
 		        		is.eq(index).addClass("acti").siblings().removeClass("acti");
 		        	     return index;
 		        	}
@@ -401,7 +401,7 @@ $(function(){
 		        	is.mouseenter(function(){      		
 		        		index = $(this).index(); 
 		        	  $(this).addClass("acti").siblings().removeClass("acti");	
-		        	  lis.eq(index).stop().fadeIn().siblings().fadeOut();
+		        	  lis.eq(index).stop().fadeIn().siblings().stop().fadeOut();
 		        	})
 		        	prevli.click(function(){
 		        		index = prev(index);		        		
@@ -475,6 +475,15 @@ $(function(){
 			              })
                        }			   	    	      
 			       })
+			        //跳转到顶部、底部
+			        $(".elevator ").on("click","span",function(){
+			        	 var spanClass = this.class;
+			        	   if(spanClass == "up"){
+			        	   	  window.scrollTo(0,0);
+			        	   }
+			        	   
+			        	 
+			        })
 		        }
 		         //调用
 		            louEvent();
